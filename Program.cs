@@ -4,34 +4,43 @@ using System.Threading;
 using System.IO.Ports;
 using System.Device.Gpio;
 using System.Drawing;
+using nanoFramework.Hardware.Esp32;
+using CCSWE.nanoFramework.NeoPixel;
 
 
 namespace inverter_monitor
 {
     public class Program
     {
-        private static SerialPort serialPort;
-        private static byte LedPin = 48;
+        private static SerialPort inverterSerialPort;
+        private const string inverterSerialPortName = "COM2";
+        private const int InverterSerialBaudRate = 2400;
+        private const int TXPin = 16;
+        private const int RXPin = 17;
+        private const byte LedPin = 48;
+        private const int NumOfLEDs = 1;
+        private static NeoPixelStrip LED;
 
         public static void Main()
         {
             Debug.WriteLine("Hello from nanoFramework!");
-
-            var led = new CCSWE.nanoFramework.NeoPixel.NeoPixelStrip(LedPin, 1, new CCSWE.nanoFramework.NeoPixel.Drivers.Ws2812B());
-            led.SetLed(0, Color.FromArgb(10, 10, 10));
-            led.Update();
 
             Thread.Sleep(Timeout.Infinite);
         }
 
         public static void SetupInverterSSerial()
         {
-            int baudRate = 2400;
-            int rxPin = 16;
-            int txPin = 17;
+            inverterSerialPort = new SerialPort(inverterSerialPortName, InverterSerialBaudRate);
+            Configuration.SetPinFunction(RXPin, DeviceFunction.COM2_RX);
+            Configuration.SetPinFunction(TXPin, DeviceFunction.COM2_TX);
 
-            serialPort = new SerialPort("COM2", baudRate);
-            
+        }
+
+        public static void SetupRGBLE()
+        {
+            LED = new NeoPixelStrip(LedPin, NumOfLEDs, new CCSWE.nanoFramework.NeoPixel.Drivers.Ws2812B());
+            //led.SetLed(0, Color.FromArgb(10, 10, 10));
+            //led.Update();
         }
     }
 }
