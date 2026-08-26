@@ -15,14 +15,17 @@ namespace inverter_monitor
 {
     internal class Helpers
     {
-        /// <summary>
-        /// Inverter Serial Protocols
-        /// </summary>
-        public static SerialPort InverterSerialPortObject;
-        public const string inverterSerialPortName = "COM2";
-        public const int InverterSerialBaudRate = 2400;
-        public const int InverterSerialTXPin = 16;
-        public const int InverterSerialRXPin = 17;
+        /// Time Related Variables
+        public static DateTime CurrentTime => DateTime.UtcNow.AddHours(5);
+        public static int CurrentYear = 2026;
+        public static long ElapsedTime => Environment.TickCount64;
+        public const bool SystemLoopIsOn = true;
+        
+        /// Energy Reset Variables
+        public static int DailyEnergyResetCheckInterval = 60000;
+        public static long DailyEnergyResetLastCheck = 0;
+        public static int LastEnergyResetDayOfYear = -1;
+
 
         /// <summary>
         /// Wifi Connection Protocols
@@ -31,8 +34,8 @@ namespace inverter_monitor
         private const string WiFiPass1 = "Fast244A";
         private const string WiFiSsid2 = "F7490";
         private const string WiFiPass2 = "F74907490";
-        public static int ManageWiFiInterval = 5000;
-        public static DateTime WiFiConnectionCheckTime;
+        public const int ManageWiFiInterval = 5000;
+        public static long WiFiConnectionLastCheckTime = 0;
         private static int LastWifiConnected = -1;
         private static WifiAvailableNetwork CurrentLocalNode = null;
         private static bool IsWifiScanning = false;
@@ -178,7 +181,9 @@ namespace inverter_monitor
             int red = (int)(color.R * brightnessLevel);
             int green = (int)(color.G * brightnessLevel);
             int blue = (int)(color.B * brightnessLevel);
+#if DEBUG
             Log(string.Format($"[LED] Color Value: R: {red}, G: {green}, B: {blue}"));
+#endif
             NeoPixelLedObject.Fill(Color.FromArgb(r:red, g:green, b:blue));
             NeoPixelLedObject.Update();
         }
@@ -236,6 +241,54 @@ namespace inverter_monitor
                 Console.Write(message);
             }
             
+        }
+
+
+        /// <summary>
+        /// Split Response with comma-separated Values
+        /// </summary>
+        public static string SplitField(string data, int index, char delimiter = ',')
+        {
+            int count = 0, start = 0;
+            for (int i = 0; i <= data.Length; i++)
+            {
+                if (i == data.Length || data[i] == delimiter)
+                {
+                    if (count == index) return data.Substring(start, i);
+                    count++;
+                    start = i + 1;
+                }
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Strip response header ^DXXX (first 5 chars) and last 2 CRC bytes
+        /// </summary>
+        public static string StripResponse(string response)
+        {
+            if (response.Length < 6) return "";
+            return response.Substring(5, response.Length - 2);
+        }
+        
+        /// <summary>
+        /// Check Reponse for Empty or Rejected Commands
+        /// </summary>
+        public static bool ErrorInResponse(string response)
+        {
+            if (string.IsNullOrEmpty(response))
+            {
+                SetLedState(LED_State.Fault);
+                Log("[ERROR] No response from inverter. Check wiring.");
+                return true;
+            }
+            if (response.StartsWith("^0"))
+            {
+                SetLedState(LED_State.Fault);
+                Log("[ERROR]]: Inverter rejected command (^0). Check CRC.");
+                return true;
+            }
+            return false;
         }
     }
 }
