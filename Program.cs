@@ -2,8 +2,6 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using System.IO.Ports;
-using System.Device.Gpio;
-using System.Drawing;
 using nanoFramework.Hardware.Esp32;
 using CCSWE.nanoFramework.NeoPixel;
 
@@ -12,35 +10,52 @@ namespace inverter_monitor
 {
     public class Program
     {
-        private static SerialPort inverterSerialPort;
-        private const string inverterSerialPortName = "COM2";
-        private const int InverterSerialBaudRate = 2400;
-        private const int TXPin = 16;
-        private const int RXPin = 17;
-        private const byte LedPin = 48;
-        private const int NumOfLEDs = 1;
-        private static NeoPixelStrip LED;
-
         public static void Main()
         {
-            Debug.WriteLine("Hello from nanoFramework!");
+            Helpers.Log("============================================================");
+            Helpers.Log("\tStarting up Inverter Monitor for InfiniSolar VII 5KW");
+            Helpers.Log("============================================================");
 
-            Thread.Sleep(Timeout.Infinite);
+            Helpers.Log("Setting up RGB LED...", false);
+            SetupRGBLed();
+            Helpers.Log("Done.");
+
+            Helpers.Log("Setting up Inverter Serial...", false);
+            SetupInverterSSerial();
+            Helpers.Log("Done.");
+
+            while (true)
+            {
+                if (DateTime.UtcNow >= Helpers.WiFiConnectionCheckTime)
+                {
+                    Helpers.WiFiConnectionCheckTime = DateTime.UtcNow.AddMilliseconds(Helpers.ManageWiFiInterval);
+                    Helpers.ManageWifiConnection();
+                }
+                
+                // Start Inverter Monitoring here
+
+                Thread.Sleep(1000);
+            }
         }
 
-        public static void SetupInverterSSerial()
+        private static void SetupInverterSSerial()
         {
-            inverterSerialPort = new SerialPort(inverterSerialPortName, InverterSerialBaudRate);
-            Configuration.SetPinFunction(RXPin, DeviceFunction.COM2_RX);
-            Configuration.SetPinFunction(TXPin, DeviceFunction.COM2_TX);
-
+            Helpers.InverterSerialPortObject = new SerialPort(Helpers.inverterSerialPortName, Helpers.InverterSerialBaudRate)
+            {
+                Mode = SerialMode.Normal,
+                Handshake = Handshake.None,
+                ReadTimeout = 3000,
+                WriteTimeout = 3000
+            };
+            Configuration.SetPinFunction(Helpers.InverterSerialRXPin, DeviceFunction.COM2_RX);
+            Configuration.SetPinFunction(Helpers.InverterSerialTXPin, DeviceFunction.COM2_TX);
+            Helpers.InverterSerialPortObject.Open();
         }
 
-        public static void SetupRGBLE()
+        private static void SetupRGBLed()
         {
-            LED = new NeoPixelStrip(LedPin, NumOfLEDs, new CCSWE.nanoFramework.NeoPixel.Drivers.Ws2812B());
-            //led.SetLed(0, Color.FromArgb(10, 10, 10));
-            //led.Update();
+            Helpers.NeoPixelLedObject = new NeoPixelStrip(Helpers.NeoPixelLedPin, Helpers.NumOfNeoPixelLEDs, Helpers.NeoPixelLedDriver);
+            Helpers.SetLedState(Helpers.LED_State.None);
         }
     }
 }
