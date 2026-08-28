@@ -19,7 +19,7 @@ namespace inverter_monitor
         public static DateTime CurrentTime => DateTime.UtcNow.AddHours(5);
         public static int CurrentYear = 2026;
         public static long ElapsedTime => Environment.TickCount64;
-        public const bool SystemLoopIsOn = true;
+        public const bool IsSystemLoopOn = true;
         
         /// Energy Reset Variables
         public static int DailyEnergyResetCheckInterval = 60000;

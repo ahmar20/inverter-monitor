@@ -24,7 +24,10 @@ namespace inverter_monitor
             SetupInverterSSerial();
             Helpers.Log("Done.");
             Helpers.SetLedState(Helpers.LED_State.Normal);
-            while (Helpers.SystemLoopIsOn)
+
+            LocalWebServer.Start();
+
+            while (Helpers.IsSystemLoopOn)
             {
                 if ((Helpers.ElapsedTime - Helpers.WiFiConnectionLastCheckTime) >= Helpers.ManageWiFiInterval || Helpers.WiFiConnectionLastCheckTime <= 0)
                 {
@@ -32,7 +35,6 @@ namespace inverter_monitor
                     Helpers.WiFiConnectionLastCheckTime = Helpers.ElapsedTime;
                     Helpers.ManageWifiConnection();
                 }
-
                 // Start Inverter Monitoring here every second unless the command is in process
                 if ((Helpers.ElapsedTime - Inverter.InverterSerialLastPollingTime) >= Inverter.InverterPollingInterval)
                 {

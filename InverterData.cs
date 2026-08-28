@@ -33,11 +33,9 @@ namespace inverter_monitor
             CMD_DID,
             CMD_PID
         };
-        public static InverterCommand ActiveCommandType = InverterCommand.CMD_NONE;
 
         public static string StartInverterCommand(InverterCommand cmd)
         {
-            ActiveCommandType = cmd;
             string response = "";
             switch (cmd)
             {
@@ -70,7 +68,6 @@ namespace inverter_monitor
                     break;
 
                 default:
-                    ActiveCommandType = InverterCommand.CMD_NONE;
                     break;
             }
             return response;
@@ -111,170 +108,170 @@ namespace inverter_monitor
         /// </summary>
         public class InverterData
         {
-            public static InverterData InverterSerialDataObject => new();
-            public GSXData GS;
-            public MODData MOD;
-            public FLAGData FLAG;
-            public PIRIData PIRI;
-            public ACCTData ACCT;
-            public ACLTData ACLT;
-            //public FWVData FWV;
-            //public DIDData DId;
-            //public PIDData PId;
-            public CloudUpdateData cloud;
+            public static InverterData InverterSerialDataObject { get; } = new();
+            public GSXData GS { get; set; } = new();
+            public MODData MOD { get; set; } = new();
+            public FLAGData FLAG { get; set; } = new();
+            public PIRIData PIRI { get; set; } = new();
+            public ACCTData ACCT { get; set; } = new();
+            public ACLTData ACLT { get; set; } = new();
+            public FWVData FWV { get; set; } = new();
+            public DIDData DId { get; set; } = new();
+            public PIDData PId { get; set; } = new();
+            public CloudUpdateData cloud { get; set; } = new();
         }
 
         public class GSXData
         {
             // Grid
-            public double gridVoltage = 0.0;            // V   (field 0  ÷ 10)
-            public double gridFrequency = 0.0;          // Hz  (field 1  ÷ 10)
-            public bool gridAvailable = false;
-            public double estimatedGridPower = 0.0;
+            public double gridVoltage { get; set; } = 0.0;            // V   (field 0  ÷ 10)
+            public double gridFrequency { get; set; } = 0.0;          // Hz  (field 1  ÷ 10)
+            public bool gridAvailable { get; set; } = false;
+            public double estimatedGridPower { get; set; } = 0.0;
             // Output
-            public double outputVoltage = 0.0;          // V   (field 2  ÷ 10)
-            public double outputFrequency = 0.0;        // Hz  (field 3  ÷ 10)
-            public int outputVA = 0;                    // VA  (field 4)
-            public int outputWatts = 0;                 // W   (field 5)
-            public double dailyOutputEnergyKWh = 0;     // daily
-            public int loadPercent = 0;                 // %   (field 6)
+            public double outputVoltage { get; set; } = 0.0;          // V   (field 2  ÷ 10)
+            public double outputFrequency { get; set; } = 0.0;        // Hz  (field 3  ÷ 10)
+            public int outputVA { get; set; } = 0;                    // VA  (field 4)
+            public int outputWatts { get; set; } = 0;                 // W   (field 5)
+            public double dailyOutputEnergyKWh { get; set; } = 0;     // daily
+            public int loadPercent { get; set; } = 0;                 // %   (field 6)
             // Battery
-            public double batteryVoltage = 0.0;         // V   (field 7  ÷ 10)
-            public int batteryVoltSCC1 = 0;             // V   (field 8  ÷ 10) -- we dont use this
-            public int batteryVoltSCC2 = 0;             // V   (field 9  ÷ 10) -- we dont use this
-            public double batteryDischargeAmps = 0.0;   // A   (field 10)
-            public double batteryChargeAmps = 0.0;      // A   (field 11)
-            public int batteryPercentage = 0;           // %   (field 12)
-            public double batteryChargePower = 0.0;
-            public double batteryDischargePower = 0.0;
-            public double dailyBatteryChargeKWh = 0.0;  // daily
-            public double dailyBatteryDischargeKWh = 0.0; // daily
+            public double batteryVoltage { get; set; } = 0.0;         // V   (field 7  ÷ 10)
+            public int batteryVoltSCC1 { get; set; } = 0;             // V   (field 8  ÷ 10) -- we dont use this
+            public int batteryVoltSCC2 { get; set; } = 0;             // V   (field 9  ÷ 10) -- we dont use this
+            public double batteryDischargeAmps { get; set; } = 0.0;   // A   (field 10)
+            public double batteryChargeAmps { get; set; } = 0.0;      // A   (field 11)
+            public int batteryPercentage { get; set; } = 0;           // %   (field 12)
+            public double batteryChargePower { get; set; } = 0.0;
+            public double batteryDischargePower { get; set; } = 0.0;
+            public double dailyBatteryChargeKWh { get; set; } = 0.0;  // daily
+            public double dailyBatteryDischargeKWh { get; set; } = 0.0; // daily
             // PV / Solar
-            public int inverterTemp = 0;                // *C  (field 13)
-            public int mpptCharger1Temp = 0;            // *C  (field 14)
-            public int mpptCharger2Temp = 0;            // *C  (field 15)
-            public int pv1InputWatts = 0;               // W   (field 16)
-            public int pv2InputWatts = 0;               // W   (field 17)
-            public double pv1InputVoltage = 0.0;        // V   (field 18 ÷ 10)
-            public double pv2InputVoltage = 0.0;        // V   (field 19 ÷ 10)
-            public double dailyPVInputKWh = 0.0;        // daily
-            public double dailyEstimatedGridKWh = 0.0;  // daily
+            public int inverterTemp { get; set; } = 0;                // *C  (field 13)
+            public int mpptCharger1Temp { get; set; } = 0;            // *C  (field 14)
+            public int mpptCharger2Temp { get; set; } = 0;            // *C  (field 15)
+            public int pv1InputWatts { get; set; } = 0;               // W   (field 16)
+            public int pv2InputWatts { get; set; } = 0;               // W   (field 17)
+            public double pv1InputVoltage { get; set; } = 0.0;        // V   (field 18 ÷ 10)
+            public double pv2InputVoltage { get; set; } = 0.0;        // V   (field 19 ÷ 10)
+            public double dailyPVInputKWh { get; set; } = 0.0;        // daily
+            public double dailyEstimatedGridKWh { get; set; } = 0.0;  // daily
             // Flags
-            public int configState = 0;                 // (field 20) Configuration --> 0: Unchanged, 1: Changed
-            public int mppt1ChargerStatus = 0;          // (field 21) MPPT 1 Charger --> 0: Disconnected, 1: Connected
-            public int mppt2ChargerStatus = 0;          // (field 22) MPPT 2 Charger --> 0: Disconnected, 1: Connected
-            public int loadConnected = 0;               // (field 23) Load Connected --> 0: Disconnected, 1: Connected
-            public int batteryPowerDirection = 0;       // (field 24) Battery Power --> 0: Idle, 1: Charging, 2: Discharging
-            public int dcAcDirection = 0;               // (field 25) DC/AC Power --> 0: Idle, 1: AC to DC, 2: DC to AC
-            public int gridPowerDirection = 0;          // (field 26) Grid Power --> 0: Idle, 1: Grid Import. 2: Grid Export
-            public int localParallelID = 0;             // (field 27) Inverter in Parallel --> 0: Single, N: Nth Number
-            public String rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public int configState { get; set; } = 0;                 // (field 20) Configuration --> 0: Unchanged, 1: Changed
+            public int mppt1ChargerStatus { get; set; } = 0;          // (field 21) MPPT 1 Charger --> 0: Disconnected, 1: Connected
+            public int mppt2ChargerStatus { get; set; } = 0;          // (field 22) MPPT 2 Charger --> 0: Disconnected, 1: Connected
+            public int loadConnected { get; set; } = 0;               // (field 23) Load Connected --> 0: Disconnected, 1: Connected
+            public int batteryPowerDirection { get; set; } = 0;       // (field 24) Battery Power --> 0: Idle, 1: Charging, 2: Discharging
+            public int dcAcDirection { get; set; } = 0;               // (field 25) DC/AC Power --> 0: Idle, 1: AC to DC, 2: DC to AC
+            public int gridPowerDirection { get; set; } = 0;          // (field 26) Grid Power --> 0: Idle, 1: Grid Import. 2: Grid Export
+            public int localParallelID { get; set; } = 0;             // (field 27) Inverter in Parallel --> 0: Single, N: Nth Number
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class MODData
         {
-            public string outputMode = "";          // field 0 -- only one field in response
-            public string rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public string outputMode { get; set; } = "";          // field 0 -- only one field in response
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class FLAGData
         {
-            public bool buzzerEnabled = false;      // (field 0) BUZZ 0: Off, 1:ON
-            public bool overloadBypass = false;     // (field 1) OLBP 0: Off, 1:ON
-            public bool lcdTimeout = false;         // (field 2) LCDE 0: Off, 1:ON
-            public bool overloadRestart = false;    // (field 3) OLRS 0: Off, 1:ON
-            public bool overTempRestart = false;    // (field 4) OTRS 0: Off, 1:ON
-            public bool backlightOn = false;        // (field 5) BLON 0: Off, 1:ON
-            public bool alarmPrimaryInput = false;  // (field 6) ALRM 0: Off, 1:ON
-            public bool faultCodeRecord = false;    // (field 7) FTCR 0: Off, 1:ON
-            public String rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public bool buzzerEnabled { get; set; } = false;      // (field 0) BUZZ 0: Off, 1:ON
+            public bool overloadBypass { get; set; } = false;     // (field 1) OLBP 0: Off, 1:ON
+            public bool lcdTimeout { get; set; } = false;         // (field 2) LCDE 0: Off, 1:ON
+            public bool overloadRestart { get; set; } = false;    // (field 3) OLRS 0: Off, 1:ON
+            public bool overTempRestart { get; set; } = false;    // (field 4) OTRS 0: Off, 1:ON
+            public bool backlightOn { get; set; } = false;        // (field 5) BLON 0: Off, 1:ON
+            public bool alarmPrimaryInput { get; set; } = false;  // (field 6) ALRM 0: Off, 1:ON
+            public bool faultCodeRecord { get; set; } = false;    // (field 7) FTCR 0: Off, 1:ON
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         // ─── PIRI — Rated Parameters
         public class PIRIData
         {
-            public double gridVoltageRating = 0.0;            // V (field 0) ÷ 10
-            public double gridCurrentRating = 0.0;            // A (field 1) ÷ 10
-            public double outputVoltageRating = 0.0;          // V (field 2) ÷ 10
-            public double outputFreqRating = 0.0;             // Hz (field 3) ÷ 10
-            public double outputCurrentRating = 0.0;          // A (field 4) ÷ 10
-            public int outputVARating = 0;                   // VA (field 5)
-            public int outputWattRating = 0;                 // W (field 6)
-            public double battVoltageRating = 0.0;           // V (field 7) ÷ 10
-            public double battStopDischargeVoltageOnGrid = 0.0; // V (field 8) ÷ 10
-            public double battStopChargeVoltageOnGrid = 0.0; // V (field 9) ÷ 10
-            public double battCutoffVoltage = 0.0;           // V (field 10) ÷ 10
-            public double battBulkChargingVoltage = 0.0;     // V (field 11) ÷ 10
-            public double battFloatVoltage = 0.0;            // V (field 12) ÷ 10
-            public string batteryConfigType = "";            // int (field 13) 0: AGM, 1: Flooded, 2: User-defined
-            public int maxACChargeCurrent = 0;               // A (field 14)
-            public int maxTotalChargeCurrent = 0;            // A (field 15)
-            public string inputVoltageRange = "";            // int (field 16) 0: APL (90-280V), 1: UPS (170-280V)
-            public string outputSourcePriority = "";         // int (field 17) 0: SUB, 1: SBU
-            public string chargerSourcePriority = "";        // int (field 18) 0: CSO, 1: SNU, 2: OSO
-            public string parallelInverterType = "";         // int (field 19) 9: Single, N: Parallel ID N
-            public string topology = "";                     // int (field 20) 0: Transformer-less, 1: Transformer-based
-            public string outputModelSetting = "";           // int (field 21) 0: Single-phase, 1: 3 Phase P1, 2: 3 Phase P2
-            public string solarPowerPriority = "";           // int (field 22) 0: BLU, 1: LBU
-            public int mpptTrackerCount = 0;                 // int (field 23) 0/1: Single-channel
-            public string pvOkConditionConfig = "";          // int (field 24) 0: PV Voltage > 0, 1: PV Voltage is > Battery Voltage
-            public int cpuSubcode = 0;                       // int (field 25) TBD
-            public string rawResponse = "";
+            public double gridVoltageRating { get; set; } = 0.0;            // V (field 0) ÷ 10
+            public double gridCurrentRating { get; set; } = 0.0;            // A (field 1) ÷ 10
+            public double outputVoltageRating { get; set; } = 0.0;          // V (field 2) ÷ 10
+            public double outputFreqRating { get; set; } = 0.0;             // Hz (field 3) ÷ 10
+            public double outputCurrentRating { get; set; } = 0.0;          // A (field 4) ÷ 10
+            public int outputVARating { get; set; } = 0;                   // VA (field 5)
+            public int outputWattRating { get; set; } = 0;                 // W (field 6)
+            public double battVoltageRating { get; set; } = 0.0;           // V (field 7) ÷ 10
+            public double battStopDischargeVoltageOnGrid { get; set; } = 0.0; // V (field 8) ÷ 10
+            public double battStopChargeVoltageOnGrid { get; set; } = 0.0; // V (field 9) ÷ 10
+            public double battCutoffVoltage { get; set; } = 0.0;           // V (field 10) ÷ 10
+            public double battBulkChargingVoltage { get; set; } = 0.0;     // V (field 11) ÷ 10
+            public double battFloatVoltage { get; set; } = 0.0;            // V (field 12) ÷ 10
+            public string batteryConfigType { get; set; } = "";            // int (field 13) 0: AGM, 1: Flooded, 2: User-defined
+            public int maxACChargeCurrent { get; set; } = 0;               // A (field 14)
+            public int maxTotalChargeCurrent { get; set; } = 0;            // A (field 15)
+            public string inputVoltageRange { get; set; } = "";            // int (field 16) 0: APL (90-280V), 1: UPS (170-280V)
+            public string outputSourcePriority { get; set; } = "";         // int (field 17) 0: SUB, 1: SBU
+            public string chargerSourcePriority { get; set; } = "";        // int (field 18) 0: CSO, 1: SNU, 2: OSO
+            public string parallelInverterType { get; set; } = "";         // int (field 19) 9: Single, N: Parallel ID N
+            public string topology { get; set; } = "";                     // int (field 20) 0: Transformer-less, 1: Transformer-based
+            public string outputModelSetting { get; set; } = "";           // int (field 21) 0: Single-phase, 1: 3 Phase P1, 2: 3 Phase P2
+            public string solarPowerPriority { get; set; } = "";           // int (field 22) 0: BLU, 1: LBU
+            public int mpptTrackerCount { get; set; } = 0;                 // int (field 23) 0/1: Single-channel
+            public string pvOkConditionConfig { get; set; } = "";          // int (field 24) 0: PV Voltage > 0, 1: PV Voltage is > Battery Voltage
+            public int cpuSubcode { get; set; } = 0;                       // int (field 25) TBD
+            public string rawResponse { get; set; } = "";
             public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class ACCTData
         {
-            public string startTime = "";
-            public string endTime = "";
-            public string rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public string startTime { get; set; } = "";
+            public string endTime { get; set; } = "";
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class ACLTData
         {
-            public string startTime = "";
-            public string endTime = "";
-            public string rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public string startTime { get; set; } = "";
+            public string endTime { get; set; } = "";
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class FWVData
         {
-            public string rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class DIDData
         {
-            public string rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class PIDData
         {
-            public string rawResponse = "";
-            public bool valid = false;
-            public long lastCmdUpdate = 0;
+            public string rawResponse { get; set; } = "";
+            public bool valid { get; set; } = false;
+            public long lastCmdUpdate { get; set; } = 0;
         }
 
         public class CloudUpdateData
         {
-            public string rawResponse = "";
-            public bool cloudUploadPending = true;
-            public string lastSuccessfulCloudUpdate = "";
-            public long lastCmdUpdate = 0;
+            public string rawResponse { get; set; } = "";
+            public bool cloudUploadPending { get; set; } = true;
+            public string lastSuccessfulCloudUpdate { get; set; } = "";
+            public long lastCmdUpdate { get; set; } = 0;
         }
         
         /// <summary>
@@ -679,7 +676,7 @@ namespace inverter_monitor
             };
             if (Helpers.ErrorInResponse(response))
                 return d;
-            String inner = Helpers.StripResponse(response);
+            string inner = Helpers.StripResponse(response);
             d.valid = true;
             d.lastCmdUpdate = Helpers.ElapsedTime;
             return d;
