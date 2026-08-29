@@ -223,7 +223,7 @@ namespace inverter_monitor
             public string pvOkConditionConfig { get; set; } = "";          // int (field 24) 0: PV Voltage > 0, 1: PV Voltage is > Battery Voltage
             public int cpuSubcode { get; set; } = 0;                       // int (field 25) TBD
             public string rawResponse { get; set; } = "";
-            public bool valid = false;
+            public bool valid { get; set; } = false;
             public long lastCmdUpdate { get; set; } = 0;
         }
 
@@ -481,8 +481,10 @@ namespace inverter_monitor
                 d.outputMode = "Battery / Solar";
             else if (f0 == "04")
                 d.outputMode = "Fault";
-            else
+            else if (f0 == "05")
                 d.outputMode = "Hybrid / Grid Tie";
+            else
+                d.outputMode = "Unknown -- code: " + f0;
 
             d.valid = true;
             d.lastCmdUpdate = Helpers.ElapsedTime;
@@ -554,11 +556,11 @@ namespace inverter_monitor
 
             string ivr = Helpers.SplitField(inner, 16);
             if (ivr == "0")
-                d.outputSourcePriority = "Appliance";
+                d.inputVoltageRange = "Appliance";
             else if (ivr == "1")
-                d.outputSourcePriority = "UPS";
+                d.inputVoltageRange = "UPS";
             else
-                d.outputSourcePriority = ivr;
+                d.inputVoltageRange = ivr;
 
             string osp = Helpers.SplitField(inner, 17);
             if (osp == "0")
@@ -577,16 +579,33 @@ namespace inverter_monitor
                 d.chargerSourcePriority = "Only Solar";
             else
                 d.chargerSourcePriority = csp;
+            
+            string parallelId = Helpers.SplitField(inner, 19);
+            if (parallelId == "9") d.parallelInverterType = "Single";
+            else d.parallelInverterType = parallelId;
 
-            string mt = Helpers.SplitField(inner, 20);
-            if (mt == "00")
-                d.parallelInverterType = "Grid tie";
-            else if (mt == "01")
-                d.parallelInverterType = "Off Grid";
-            else if (mt == "10")
-                d.parallelInverterType = "Hybrid";
-            else
-                d.parallelInverterType = mt;
+            string topology = Helpers.SplitField(inner, 20);
+            if (topology == "0") d.topology = "Transformer-less";
+            if (topology == "1") d.topology = "Transformer-based";
+            else d.topology = parallelId;
+
+            string outputMode = Helpers.SplitField(inner, 21);
+            if (outputMode == "0") d.outputModelSetting = "Single-phase";
+            if (outputMode == "1") d.outputModelSetting = "3 Phase P1";
+            if (outputMode == "2") d.outputModelSetting = "3 Phase P2";
+            else d.outputModelSetting = outputMode;
+
+            string solarPrio = Helpers.SplitField(inner, 22);
+            if (solarPrio == "0") d.solarPowerPriority = "Battery-Load-Utility";
+            if (solarPrio == "1") d.solarPowerPriority = "Load-Battery-Utility";
+            else d.solarPowerPriority = solarPrio;
+
+            // field 23 unused
+
+            string pvOkConfig = Helpers.SplitField(inner, 24);
+            if (pvOkConfig == "0") d.pvOkConditionConfig = "PV Voltage > 0";
+            if (pvOkConfig == "1") d.pvOkConditionConfig = "PV Voltage > Battery Voltage";
+            else d.pvOkConditionConfig = pvOkConfig;
 
             d.valid = true;
             d.lastCmdUpdate = Helpers.ElapsedTime;

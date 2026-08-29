@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Net;
-using System.Text;
-using nanoFramework.Json;
+﻿using nanoFramework.Json;
 using nanoFramework.WebServer;
+using nanoFramework.System.IO.FileSystem;
+using System;
+using System.IO;
+using System.Net;
 
 namespace inverter_monitor
 {
     internal class LocalWebServer
     {
         private static WebServer _server;
-        
+
         public static void Start()
         {
             if (_server != null)
@@ -39,9 +39,9 @@ namespace inverter_monitor
                         HandleApiData(e);
                         break;
 
-                    case "/api/status":
-                        HandleApiStatus(e);
-                        break;
+                    //case "/api/status":
+                    //    HandleApiStatus(e);
+                    //    break;
 
                     default:
                         SendNotFound(e);
@@ -57,21 +57,50 @@ namespace inverter_monitor
 
         private static void HandleRoot(WebServerEventArgs e)
         {
-            string html =
-                "<!DOCTYPE html>" +
-                "<html>" +
-                "<head>" +
-                "<meta charset='UTF-8'>" +
-                "<meta name='viewport' content='width=device-width,initial-scale=1'>" +
-                "<title>Inverter Monitor</title>" +
-                "</head>" +
-                "<body>" +
-                "<h1>Inverter Monitor</h1>" +
-                "<p>ESP32 Web Server is working.</p>" +
-                "</body>" +
-                "</html>";
+            const string DirectoryPath = "I:\\"; // Internal storage
+            // Check if file exists and serve it
+            string filePath = DirectoryPath + "page.html";
+            if (File.Exists(filePath))
+            {
+                WebServer.SendFileOverHTTP(e.Context.Response, filePath);
+            }
+            else
+            {
+                // if file is not available then load a dynamically loaded webpage
+                // given the link of raw html file on Github.
+                string htmlContent = @"<!DOCTYPE html>
+                        <html lang=""en"">
+                        <head>
+                            <meta charset=""UTF-8"">
+                            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+                            <title>Loading Dashboard...</title>
+                            <script>
+                                // The code executes automatically when the browser reads this script
+                                const dashboardUrl = 'https://github.com/ahmar20/inverter-monitor/raw/refs/heads/master/page.html';
 
-            SendResponse(e, html, "text/html", HttpStatusCode.OK);
+                                fetch(dashboardUrl)
+                                  .then(response => {
+                                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                                    return response.blob(); 
+                                  })
+                                  .then(blob => {
+                                    const htmlBlob = new Blob([blob], { type: 'text/html' });
+                                    const newPageUrl = URL.createObjectURL(htmlBlob);
+                                    window.location.replace(newPageUrl);
+                                  })
+                                  .catch(error => {
+                                    console.error('Failed to download or render the dashboard:', error);
+                                    document.body.innerHTML = '<h1>Error loading dashboard. Please try again later.</h1>';
+                                  });
+                            </script>
+                        </head>
+                        <body>
+                            <!-- This message shows briefly while the file downloads -->
+                            <p>Loading your dashboard, please wait...</p>
+                        </body>
+                        </html>";
+                SendResponse(e, htmlContent, "text/html", HttpStatusCode.OK);
+            }
         }
 
         private static void HandleApiData(WebServerEventArgs e)
@@ -80,7 +109,6 @@ namespace inverter_monitor
             // Later this will come from your inverter data model.
 
             string json = JsonConvert.SerializeObject(Inverter.InverterData.InverterSerialDataObject);
-
             SendResponse(e, json, "application/json", HttpStatusCode.OK);
         }
 
