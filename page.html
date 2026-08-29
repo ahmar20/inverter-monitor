@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html lang=" en" data-theme=" dark">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset=" UTF-8" />
-    <meta name=" viewport" content=" width=device-width, initial-scale=1.0" />
-    <meta name=" theme-color" content=" #0b1220" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1220" />
     <title>Inverter Monitor</title>
 
     <style>
@@ -1217,21 +1217,21 @@
 
 <body>
 
-    <div class=" wrap">
+    <div class="wrap">
 
         <!-- ==========================================================
                 HEADER
                 ========================================================== -->
         <header>
-            <div class=" brand">
-                <div class=" logo" aria-hidden=" true">
-                    <svg viewBox=" 0 0 24 24"
-                         fill=" none"
-                         stroke=" currentColor"
-                         stroke-width=" 2.2"
-                         stroke-linecap=" round"
-                         stroke-linejoin=" round">
-                        <path d=" M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
+            <div class="brand">
+                <div class="logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2.2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
                     </svg>
                 </div>
                 <div>
@@ -1240,32 +1240,32 @@
                 </div>
             </div>
 
-            <div class=" header-controls">
-                <div class=" pill">
-                    <span id=" systemDot" class=" status-dot"></span>
-                    <span id=" systemStatus">Connecting…</span>
+            <div class="header-controls">
+                <div class="pill">
+                    <span id="systemDot" class="status-dot"></span>
+                    <span id="systemStatus">Connecting…</span>
                 </div>
-                <div class=" ctrl">
-                    <label for=" refreshRate">Refresh</label>
-                    <select id=" refreshRate" aria-label=" Refresh rate">
-                        <option value=" 1000" selected>1s</option>
-                        <option value=" 2000">2s</option>
-                        <option value=" 5000">5s</option>
-                        <option value=" 10000">10s</option>
+                <div class="ctrl">
+                    <label for="refreshRate">Refresh</label>
+                    <select id="refreshRate" aria-label="Refresh rate">
+                        <option value="1000" selected>1s</option>
+                        <option value="2000">2s</option>
+                        <option value="5000">5s</option>
+                        <option value="10000">10s</option>
                     </select>
                 </div>
 
-                <a class=" tbtn" href=" /serial">
-                    <svg width=" 15"
-                         height=" 15"
-                         viewBox=" 0 0 24 24"
-                         fill=" none"
-                         stroke=" currentColor"
-                         stroke-width=" 2"
-                         stroke-linecap=" round"
-                         stroke-linejoin=" round">
-                        <rect x=" 3" y=" 4" width=" 18" height=" 16" rx=" 2" />
-                        <path d=" m7 9 3 3-3 3M13 15h4" />
+                <a class="tbtn" href="/serial">
+                    <svg width="15"
+                         height="15"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="16" rx="2" />
+                        <path d="m7 9 3 3-3 3M13 15h4" />
                     </svg>
                     <span>Serial</span>
                 </a>
@@ -1284,18 +1284,18 @@
                     <span>Update</span>
                 </a>
                 -->
-                <button class=" tbtn" id=" themeToggle" aria-label=" Toggle theme">
-                    <svg width=" 15"
-                         height=" 15"
-                         viewBox=" 0 0 24 24"
-                         fill=" none"
-                         stroke=" currentColor"
-                         stroke-width=" 2"
-                         stroke-linecap=" round">
-                        <circle cx=" 12" cy=" 12" r=" 4" />
-                        <path d=" M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                <button class="tbtn" id="themeToggle" aria-label="Toggle theme">
+                    <svg width="15"
+                         height="15"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         stroke-linecap="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
                     </svg>
-                    <span id=" themeLabel">Light</span>
+                    <span id="themeLabel">Light</span>
                 </button>
             </div>
         </header>
@@ -1303,17 +1303,17 @@
         <!-- ==========================================================
                 OFFLINE BANNER
                 ========================================================== -->
-        <div id=" offlineBanner" role=" alert">
+        <div id="offlineBanner" role="alert">
 
-            <div class=" ob-ico" aria-hidden=" true">
-                <svg viewBox=" 0 0 24 24"
-                     fill=" none"
-                     stroke=" currentColor"
-                     stroke-width=" 2"
-                     stroke-linecap=" round"
-                     stroke-linejoin=" round">
-                    <path d=" M12 9v4M12 17h.01" />
-                    <path d=" M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+            <div class="ob-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M12 9v4M12 17h.01" />
+                    <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
                 </svg>
             </div>
 
@@ -1330,121 +1330,121 @@
         <!-- ==========================================================
                 ENERGY FLOW
                 ========================================================== -->
-        <div class=" grid" style=" margin-bottom: var(--gap)">
-            <div class=" card col-12" style=" --accent: var(--amber)">
-                <div class=" card-head">
-                    <div class=" card-title">
-                        <span class=" icon">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" M3 12h4l3-9 4 18 3-9h4" />
+        <div class="grid" style="margin-bottom: var(--gap)">
+            <div class="card col-12" style="--accent: var(--amber)">
+                <div class="card-head">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M3 12h4l3-9 4 18 3-9h4" />
                             </svg>
                         </span>
                         Energy Flow
                     </div>
                 </div>
 
-                <div class=" flow">
+                <div class="flow">
                     <!-- Solar / Grid source -->
-                    <div class=" flow-node-slot" id=" flowSourceSlot">
-                        <div class=" flow-node"
-                             id=" flowNodeSolar"
-                             style=" --fc: var(--amber)">
-                            <div class=" fn-ico">
-                                <svg viewBox=" 0 0 24 24"
-                                     fill=" none"
-                                     stroke=" currentColor"
-                                     stroke-width=" 2"
-                                     stroke-linecap=" round"
-                                     stroke-linejoin=" round">
-                                    <circle cx=" 12" cy=" 12" r=" 4" />
-                                    <path d=" M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M18 18l-1.5-1.5" />
+                    <div class="flow-node-slot" id="flowSourceSlot">
+                        <div class="flow-node"
+                             id="flowNodeSolar"
+                             style="--fc: var(--amber)">
+                            <div class="fn-ico">
+                                <svg viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="4" />
+                                    <path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6l1.5 1.5M18 18l-1.5-1.5" />
                                 </svg>
                             </div>
-                            <div class=" fn-val">
-                                <span id=" flowSolar">--</span> W
+                            <div class="fn-val">
+                                <span id="flowSolar">--</span> W
                             </div>
-                            <div class=" fn-lbl">Solar</div>
+                            <div class="fn-lbl">Solar</div>
                         </div>
-                        <div class=" flow-node hidden"
-                             id=" flowNodeGrid"
-                             style=" --fc: var(--grid)">
-                            <div class=" fn-ico">
-                                <svg viewBox=" 0 0 24 24"
-                                     fill=" none"
-                                     stroke=" currentColor"
-                                     stroke-width=" 2"
-                                     stroke-linecap=" round"
-                                     stroke-linejoin=" round">
-                                    <path d=" M4 3h16M6 3v18M18 3v18M4 21h16M9 3v18M15 3v18M4 9h16M4 15h16" />
+                        <div class="flow-node hidden"
+                             id="flowNodeGrid"
+                             style="--fc: var(--grid)">
+                            <div class="fn-ico">
+                                <svg viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor"
+                                     stroke-width="2"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="M4 3h16M6 3v18M18 3v18M4 21h16M9 3v18M15 3v18M4 9h16M4 15h16" />
                                 </svg>
                             </div>
-                            <div class=" fn-val">
-                                <span id=" flowGrid">--</span> W
+                            <div class="fn-val">
+                                <span id="flowGrid">--</span> W
                             </div>
-                            <div class=" fn-lbl">Grid</div>
+                            <div class="fn-lbl">Grid</div>
                         </div>
                     </div>
-                    <div class=" flow-arrow" id=" flowArrow1">
-                        <svg viewBox=" 0 0 26 14"
-                             fill=" none"
-                             stroke=" currentColor"
-                             stroke-width=" 2"
-                             stroke-linecap=" round"
-                             stroke-linejoin=" round">
-                            <path d=" M1 7h22M18 2l5 5-5 5" />
+                    <div class="flow-arrow" id="flowArrow1">
+                        <svg viewBox="0 0 26 14"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M1 7h22M18 2l5 5-5 5" />
                         </svg>
                     </div>
                     <!-- Battery -->
-                    <div class=" flow-node" style=" --fc: var(--charge)">
+                    <div class="flow-node" style="--fc: var(--charge)">
 
-                        <div class=" fn-ico">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <rect x=" 2" y=" 7" width=" 16" height=" 10" rx=" 2" />
-                                <path d=" M22 11v2" />
+                        <div class="fn-ico">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <rect x="2" y="7" width="16" height="10" rx="2" />
+                                <path d="M22 11v2" />
                             </svg>
                         </div>
-                        <div class=" fn-val">
-                            <span id=" flowBatt">--</span> %
+                        <div class="fn-val">
+                            <span id="flowBatt">--</span> %
                         </div>
-                        <div class=" fn-lbl">Battery</div>
+                        <div class="fn-lbl">Battery</div>
                     </div>
-                    <div class=" flow-arrow" id=" flowArrow2">
-                        <svg viewBox=" 0 0 26 14"
-                             fill=" none"
-                             stroke=" currentColor"
-                             stroke-width=" 2"
-                             stroke-linecap=" round"
-                             stroke-linejoin=" round">
-                            <path d=" M1 7h22M18 2l5 5-5 5" />
+                    <div class="flow-arrow" id="flowArrow2">
+                        <svg viewBox="0 0 26 14"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+                            <path d="M1 7h22M18 2l5 5-5 5" />
                         </svg>
                     </div>
                     <!-- Load -->
-                    <div class=" flow-node" style=" --fc: var(--grid)">
+                    <div class="flow-node" style="--fc: var(--grid)">
 
-                        <div class=" fn-ico">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" M4 14a1 1 0 0 1-.8-1.6l9.4-12.6c.3-.5 1.1-.2 1 .4L11.6 9H20a1 1 0 0 1 .8 1.6l-9.4 12.6c-.3.5-1.1.2-1-.4L13.4 15H4z" />
+                        <div class="fn-ico">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M4 14a1 1 0 0 1-.8-1.6l9.4-12.6c.3-.5 1.1-.2 1 .4L11.6 9H20a1 1 0 0 1 .8 1.6l-9.4 12.6c-.3.5-1.1.2-1-.4L13.4 15H4z" />
                             </svg>
                         </div>
-                        <div class=" fn-val">
-                            <span id=" flowLoad">--</span> W
+                        <div class="fn-val">
+                            <span id="flowLoad">--</span> W
                         </div>
-                        <div class=" fn-lbl">Load</div>
+                        <div class="fn-lbl">Load</div>
                     </div>
                 </div>
             </div>
@@ -1453,135 +1453,135 @@
         <!-- ==========================================================
                 SUMMARY
                 ========================================================== -->
-        <section class=" summary" id=" summaryStrip">
+        <section class="summary" id="summaryStrip">
 
-            <div class=" stat" style=" --accent: var(--charge)">
-                <div class=" k">Battery</div>
-                <div class=" v">
-                    <span id=" sumBattery">--</span>
+            <div class="stat" style="--accent: var(--charge)">
+                <div class="k">Battery</div>
+                <div class="v">
+                    <span id="sumBattery">--</span>
                     <small>%</small>
                 </div>
-                <div class=" sub" id=" sumBatteryV">-- V</div>
+                <div class="sub" id="sumBatteryV">-- V</div>
             </div>
 
-            <div class=" stat" style=" --accent: var(--amber)">
-                <div class=" k">Solar Input</div>
-                <div class=" v">
-                    <span id=" sumSolar">--</span>
+            <div class="stat" style="--accent: var(--amber)">
+                <div class="k">Solar Input</div>
+                <div class="v">
+                    <span id="sumSolar">--</span>
                     <small>W</small>
                 </div>
-                <div class=" sub" id=" sumSolarV">-- V</div>
+                <div class="sub" id="sumSolarV">-- V</div>
             </div>
 
-            <div class=" stat" style=" --accent: var(--grid)">
-                <div class=" k">Load</div>
-                <div class=" v">
-                    <span id=" sumLoad">--</span>
+            <div class="stat" style="--accent: var(--grid)">
+                <div class="k">Load</div>
+                <div class="v">
+                    <span id="sumLoad">--</span>
                     <small>%</small>
                 </div>
-                <div class=" sub" id=" sumLoadW">-- W</div>
+                <div class="sub" id="sumLoadW">-- W</div>
             </div>
 
-            <div class=" stat" style=" --accent: var(--discharge)">
-                <div class=" k">Inverter Temp</div>
-                <div class=" v">
-                    <span id=" sumTemp">--</span>
+            <div class="stat" style="--accent: var(--discharge)">
+                <div class="k">Inverter Temp</div>
+                <div class="v">
+                    <span id="sumTemp">--</span>
                     <small>°C</small>
                 </div>
-                <div class=" sub" id=" sumTempState">--</div>
+                <div class="sub" id="sumTempState">--</div>
             </div>
 
         </section>
 
-        <div class=" grid">
+        <div class="grid">
             <!-- ========================================================
                     BATTERY
                     ======================================================== -->
-            <div class=" card col-4" style=" --accent: var(--charge)">
-                <div class=" card-head">
-                    <div class=" card-title">
-                        <span class=" icon">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <rect x=" 2" y=" 7" width=" 16" height=" 10" rx=" 2" />
-                                <path d=" M22 11v2" />
-                                <path d=" M6 11v2M10 10v4" />
+            <div class="card col-4" style="--accent: var(--charge)">
+                <div class="card-head">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <rect x="2" y="7" width="16" height="10" rx="2" />
+                                <path d="M22 11v2" />
+                                <path d="M6 11v2M10 10v4" />
                             </svg>
                         </span>
                         Battery
                     </div>
-                    <span class=" badge" id=" batteryStatus">--</span>
+                    <span class="badge" id="batteryStatus">--</span>
                 </div>
 
-                <div class=" gauge-wrap">
-                    <div class=" gauge">
-                        <svg viewBox=" 0 0 120 120">
-                            <circle class=" track"
-                                    cx=" 60"
-                                    cy=" 60"
-                                    r=" 52" />
+                <div class="gauge-wrap">
+                    <div class="gauge">
+                        <svg viewBox="0 0 120 120">
+                            <circle class="track"
+                                    cx="60"
+                                    cy="60"
+                                    r="52" />
 
-                            <circle class=" prog"
-                                    id=" battGauge"
-                                    cx=" 60"
-                                    cy=" 60"
-                                    r=" 52"
-                                    stroke-dasharray=" 326.7"
-                                    stroke-dashoffset=" 326.7" />
+                            <circle class="prog"
+                                    id="battGauge"
+                                    cx="60"
+                                    cy="60"
+                                    r="52"
+                                    stroke-dasharray="326.7"
+                                    stroke-dashoffset="326.7" />
                         </svg>
 
-                        <div class=" center">
-                            <div class=" g-num">
-                                <span id=" battPercent">--</span>%
+                        <div class="center">
+                            <div class="g-num">
+                                <span id="battPercent">--</span>%
                             </div>
-                            <div class=" g-lbl">
+                            <div class="g-lbl">
                                 state of charge
                             </div>
                         </div>
                     </div>
 
-                    <div class=" gauge-side">
-                        <div class=" metric metric-wide">
-                            <div class=" lbl">Voltage</div>
-                            <div class=" num">
-                                <span id=" batteryVoltage">--</span>
+                    <div class="gauge-side">
+                        <div class="metric metric-wide">
+                            <div class="lbl">Voltage</div>
+                            <div class="num">
+                                <span id="batteryVoltage">--</span>
                                 <small>V</small>
                             </div>
                         </div>
 
-                        <div class=" metric">
-                            <div class=" lbl">Charge Current</div>
-                            <div class=" num">
-                                <span id=" batteryChargeAmps">--</span>
+                        <div class="metric">
+                            <div class="lbl">Charge Current</div>
+                            <div class="num">
+                                <span id="batteryChargeAmps">--</span>
                                 <small>A</small>
                             </div>
                         </div>
 
-                        <div class=" metric">
-                            <div class=" lbl">Discharge Current</div>
-                            <div class=" num">
-                                <span id=" batteryDischargeAmps">--</span>
+                        <div class="metric">
+                            <div class="lbl">Discharge Current</div>
+                            <div class="num">
+                                <span id="batteryDischargeAmps">--</span>
                                 <small>A</small>
                             </div>
 
                         </div>
 
-                        <div class=" metric">
-                            <div class=" lbl">Charged Today</div>
-                            <div class=" num">
-                                <span id=" batteryChargeKWh">--</span>
+                        <div class="metric">
+                            <div class="lbl">Charged Today</div>
+                            <div class="num">
+                                <span id="batteryChargeKWh">--</span>
                                 <small>kWh</small>
                             </div>
                         </div>
 
-                        <div class=" metric">
-                            <div class=" lbl">Discharged Today</div>
-                            <div class=" num">
-                                <span id=" batteryDischargeKWh">--</span>
+                        <div class="metric">
+                            <div class="lbl">Discharged Today</div>
+                            <div class="num">
+                                <span id="batteryDischargeKWh">--</span>
                                 <small>kWh</small>
                             </div>
                         </div>
@@ -1592,66 +1592,66 @@
             <!-- ========================================================
                     SOLAR / PV
                     ======================================================== -->
-            <div class=" card col-4" style=" --accent: var(--amber)">
-                <div class=" card-head">
-                    <div class=" card-title">
-                        <span class=" icon">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <circle cx=" 12" cy=" 12" r=" 4" />
-                                <path d=" M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+            <div class="card col-4" style="--accent: var(--amber)">
+                <div class="card-head">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
                             </svg>
                         </span>
                         Solar (PV)
                     </div>
                 </div>
 
-                <div class=" metrics">
-                    <div class=" metric">
-                        <div class=" lbl">Voltage</div>
-                        <div class=" num">
-                            <span id=" pvInputVoltage">--</span>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="lbl">Voltage</div>
+                        <div class="num">
+                            <span id="pvInputVoltage">--</span>
                             <small>V</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Current</div>
-                        <div class=" num">
-                            <span id=" pvInputAmps">--</span>
+                    <div class="metric">
+                        <div class="lbl">Current</div>
+                        <div class="num">
+                            <span id="pvInputAmps">--</span>
                             <small>A</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Power</div>
-                        <div class=" num">
-                            <span id=" pvInputWatts">--</span>
+                    <div class="metric">
+                        <div class="lbl">Power</div>
+                        <div class="num">
+                            <span id="pvInputWatts">--</span>
                             <small>W</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Energy Today</div>
-                        <div class=" num">
-                            <span id=" pvInputKWh">--</span>
+                    <div class="metric">
+                        <div class="lbl">Energy Today</div>
+                        <div class="num">
+                            <span id="pvInputKWh">--</span>
                             <small>kWh</small>
                         </div>
                     </div>
                 </div>
 
-                <div style=" margin-top:16px">
-                    <div style=" display:flex;justify-content:space-between;font-size:12px;
+                <div style="margin-top:16px">
+                    <div style="display:flex;justify-content:space-between;font-size:12px;
                          color:var(--muted);margin-bottom:6px">
                         <span>Generation</span>
-                        <span id=" pvBarLabel">0 W</span>
+                        <span id="pvBarLabel">0 W</span>
                     </div>
-                    <div class=" bar">
-                        <span id=" pvBar"></span>
+                    <div class="bar">
+                        <span id="pvBar"></span>
                     </div>
                 </div>
             </div>
@@ -1659,53 +1659,53 @@
             <!-- ========================================================
                     UTILITY GRID
                     ======================================================== -->
-            <div class=" card col-4" style=" --accent: var(--grid)">
-                <div class=" card-head">
-                    <div class=" card-title">
-                        <span class=" icon">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" M4 3h16M6 3v18M18 3v18M4 21h16M9 3v18M15 3v18M4 9h16M4 15h16" />
+            <div class="card col-4" style="--accent: var(--grid)">
+                <div class="card-head">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M4 3h16M6 3v18M18 3v18M4 21h16M9 3v18M15 3v18M4 9h16M4 15h16" />
                             </svg>
                         </span>
                         Utility Grid
                     </div>
-                    <span class=" badge" id=" gridStatus">--</span>
+                    <span class="badge" id="gridStatus">--</span>
                 </div>
 
-                <div class=" metrics">
-                    <div class=" metric">
-                        <div class=" lbl">Voltage</div>
-                        <div class=" num">
-                            <span id=" gridVoltage">--</span>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="lbl">Voltage</div>
+                        <div class="num">
+                            <span id="gridVoltage">--</span>
                             <small>V</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Frequency</div>
-                        <div class=" num">
-                            <span id=" gridFrequency">--</span>
+                    <div class="metric">
+                        <div class="lbl">Frequency</div>
+                        <div class="num">
+                            <span id="gridFrequency">--</span>
                             <small>Hz</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Power</div>
-                        <div class=" num">
-                            <span id=" estimatedGridPower">--</span>
+                    <div class="metric">
+                        <div class="lbl">Power</div>
+                        <div class="num">
+                            <span id="estimatedGridPower">--</span>
                             <small>W</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Energy</div>
-                        <div class=" num">
-                            <span id=" estimatedGridKWh">--</span>
+                    <div class="metric">
+                        <div class="lbl">Energy</div>
+                        <div class="num">
+                            <span id="estimatedGridKWh">--</span>
                             <small>kWh</small>
                         </div>
                     </div>
@@ -1715,70 +1715,70 @@
             <!-- ========================================================
                     OUTPUT / LOAD
                     ======================================================== -->
-            <div class=" card col-8" style=" --accent: var(--grid)">
-                <div class=" card-head">
-                    <div class=" card-title">
-                        <span class=" icon">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" M4 14a1 1 0 0 1-.8-1.6l9.4-12.6c.3-.5 1.1-.2 1 .4L11.6 9H20a1 1 0 0 1 .8 1.6l-9.4 12.6c-.3.5-1.1.2-1-.4L13.4 15H4z" />
+            <div class="card col-8" style="--accent: var(--grid)">
+                <div class="card-head">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M4 14a1 1 0 0 1-.8-1.6l9.4-12.6c.3-.5 1.1-.2 1 .4L11.6 9H20a1 1 0 0 1 .8 1.6l-9.4 12.6c-.3.5-1.1.2-1-.4L13.4 15H4z" />
                             </svg>
                         </span>
                         Output &amp; Load
                     </div>
                 </div>
 
-                <div class=" metrics metrics-4">
-                    <div class=" metric">
-                        <div class=" lbl">Voltage</div>
-                        <div class=" num">
-                            <span id=" outputVoltage">--</span>
+                <div class="metrics metrics-4">
+                    <div class="metric">
+                        <div class="lbl">Voltage</div>
+                        <div class="num">
+                            <span id="outputVoltage">--</span>
                             <small>V</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Frequency</div>
-                        <div class=" num">
-                            <span id=" outputFrequency">--</span>
+                    <div class="metric">
+                        <div class="lbl">Frequency</div>
+                        <div class="num">
+                            <span id="outputFrequency">--</span>
                             <small>Hz</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Active</div>
-                        <div class=" num">
-                            <span id=" outputWatts">--</span>
+                    <div class="metric">
+                        <div class="lbl">Active</div>
+                        <div class="num">
+                            <span id="outputWatts">--</span>
                             <small>W</small>
                         </div>
                     </div>
 
-                    <div class=" metric">
-                        <div class=" lbl">Apparent</div>
-                        <div class=" num">
-                            <span id=" outputVA">--</span>
+                    <div class="metric">
+                        <div class="lbl">Apparent</div>
+                        <div class="num">
+                            <span id="outputVA">--</span>
                             <small>VA</small>
                         </div>
                     </div>
                 </div>
-                <div style=" margin-top:18px">
+                <div style="margin-top:18px">
 
-                    <div style=" display:flex;justify-content:space-between;
+                    <div style="display:flex;justify-content:space-between;
                          font-size:12.5px;margin-bottom:7px">
-                        <span style=" color:var(--muted)">
+                        <span style="color:var(--muted)">
                             Load level
                         </span>
-                        <span style=" font-family:var(--font-num);font-weight:700">
-                            <span id=" loadPercentLabel">--</span>%
+                        <span style="font-family:var(--font-num);font-weight:700">
+                            <span id="loadPercentLabel">--</span>%
                         </span>
                     </div>
 
-                    <div class=" bar">
-                        <span id=" loadBar"></span>
+                    <div class="bar">
+                        <span id="loadBar"></span>
                     </div>
                 </div>
             </div>
@@ -1786,47 +1786,47 @@
             <!-- ========================================================
                     TEMPERATURE
                     ======================================================== -->
-            <div class=" card col-4" style=" --accent: var(--discharge)">
-                <div class=" card-head">
-                    <div class=" card-title">
-                        <span class=" icon">
-                            <svg viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" M14 14.76V4a2 2 0 0 0-4 0v10.76a4 4 0 1 0 4 0z" />
+            <div class="card col-4" style="--accent: var(--discharge)">
+                <div class="card-head">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M14 14.76V4a2 2 0 0 0-4 0v10.76a4 4 0 1 0 4 0z" />
                             </svg>
                         </span>
                         Temperature
                     </div>
-                    <span class=" badge" id=" tempBadge">--</span>
+                    <span class="badge" id="tempBadge">--</span>
                 </div>
 
-                <div class=" gauge-wrap temperature-wrap">
-                    <div class=" gauge">
-                        <svg viewBox=" 0 0 120 120">
+                <div class="gauge-wrap temperature-wrap">
+                    <div class="gauge">
+                        <svg viewBox="0 0 120 120">
 
-                            <circle class=" track"
-                                    cx=" 60"
-                                    cy=" 60"
-                                    r=" 52" />
+                            <circle class="track"
+                                    cx="60"
+                                    cy="60"
+                                    r="52" />
 
-                            <circle class=" prog"
-                                    id=" tempGauge"
-                                    cx=" 60"
-                                    cy=" 60"
-                                    r=" 52"
-                                    stroke-dasharray=" 326.7"
-                                    stroke-dashoffset=" 326.7" />
+                            <circle class="prog"
+                                    id="tempGauge"
+                                    cx="60"
+                                    cy="60"
+                                    r="52"
+                                    stroke-dasharray="326.7"
+                                    stroke-dashoffset="326.7" />
                         </svg>
 
-                        <div class=" center">
-                            <div class=" g-num">
-                                <span id=" inverterTemp">--</span>°
+                        <div class="center">
+                            <div class="g-num">
+                                <span id="inverterTemp">--</span>°
                             </div>
-                            <div class=" g-lbl">
+                            <div class="g-lbl">
                                 Inverter
                             </div>
                         </div>
@@ -1837,161 +1837,161 @@
             <!-- ========================================================
                     SETTINGS - FULL WIDTH
                     ======================================================== -->
-            <div class=" col-12">
+            <div class="col-12">
                 <details>
                     <summary>
                         Inverter Settings
 
-                        <span class=" chev">
-                            <svg width=" 18"
-                                 height=" 18"
-                                 viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" m6 9 6 6 6-6" />
+                        <span class="chev">
+                            <svg width="18"
+                                 height="18"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
                             </svg>
                         </span>
                     </summary>
 
-                    <div class=" collapsible-content">
-                        <div class=" value-grid">
-                            <div class=" value-box">
-                                <div class=" value-label">Output Mode</div>
-                                <div class=" value" id=" outputMode">--</div>
+                    <div class="collapsible-content">
+                        <div class="value-grid">
+                            <div class="value-box">
+                                <div class="value-label">Output Mode</div>
+                                <div class="value" id="outputMode">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Output Priority</div>
-                                <div class=" value" id=" outputPriority">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Output Priority</div>
+                                <div class="value" id="outputPriority">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Charger Priority</div>
-                                <div class=" value" id=" chargerPriority">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Charger Priority</div>
+                                <div class="value" id="chargerPriority">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Solar Priority</div>
-                                <div class=" value" id=" solarPowerPriority">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Solar Priority</div>
+                                <div class="value" id="solarPowerPriority">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Battery Type</div>
-                                <div class=" value" id=" batteryType">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Battery Type</div>
+                                <div class="value" id="batteryType">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Input Range</div>
-                                <div class=" value" id=" inputVoltageRange">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Input Range</div>
+                                <div class="value" id="inputVoltageRange">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Bulk Voltage</div>
-                                <div class=" value">
-                                    <span id=" battBulk">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Bulk Voltage</div>
+                                <div class="value">
+                                    <span id="battBulk">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Float Voltage</div>
-                                <div class=" value">
-                                    <span id=" battFloat">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Float Voltage</div>
+                                <div class="value">
+                                    <span id="battFloat">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Cutoff Voltage</div>
-                                <div class=" value">
-                                    <span id=" battCutoff">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Cutoff Voltage</div>
+                                <div class="value">
+                                    <span id="battCutoff">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Stop Discharge on Grid</div>
-                                <div class=" value">
-                                    <span id=" battStopDischarge">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Stop Discharge on Grid</div>
+                                <div class="value">
+                                    <span id="battStopDischarge">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Stop Charge on Grid</div>
-                                <div class=" value">
-                                    <span id=" battStopCharge">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Stop Charge on Grid</div>
+                                <div class="value">
+                                    <span id="battStopCharge">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Max AC Charge</div>
-                                <div class=" value">
-                                    <span id=" maxACChargeCurrent">--</span> A
+                            <div class="value-box">
+                                <div class="value-label">Max AC Charge</div>
+                                <div class="value">
+                                    <span id="maxACChargeCurrent">--</span> A
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Max Total Charge</div>
-                                <div class=" value">
-                                    <span id=" maxTotalChargeCurrent">--</span> A
+                            <div class="value-box">
+                                <div class="value-label">Max Total Charge</div>
+                                <div class="value">
+                                    <span id="maxTotalChargeCurrent">--</span> A
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Rated Output</div>
-                                <div class=" value">
-                                    <span id=" outputWattRating">--</span> W
+                            <div class="value-box">
+                                <div class="value-label">Rated Output</div>
+                                <div class="value">
+                                    <span id="outputWattRating">--</span> W
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Rated VA</div>
-                                <div class=" value">
-                                    <span id=" outputVARating">--</span> VA
+                            <div class="value-box">
+                                <div class="value-label">Rated VA</div>
+                                <div class="value">
+                                    <span id="outputVARating">--</span> VA
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Rated Output Current</div>
-                                <div class=" value">
-                                    <span id=" outputCurrentRating">--</span> A
+                            <div class="value-box">
+                                <div class="value-label">Rated Output Current</div>
+                                <div class="value">
+                                    <span id="outputCurrentRating">--</span> A
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Rated Grid Voltage</div>
-                                <div class=" value">
-                                    <span id=" gridVoltageRating">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Rated Grid Voltage</div>
+                                <div class="value">
+                                    <span id="gridVoltageRating">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Rated Grid Current</div>
-                                <div class=" value">
-                                    <span id=" gridCurrentRating">--</span> A
+                            <div class="value-box">
+                                <div class="value-label">Rated Grid Current</div>
+                                <div class="value">
+                                    <span id="gridCurrentRating">--</span> A
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Battery Rating</div>
-                                <div class=" value">
-                                    <span id=" battVoltageRating">--</span> V
+                            <div class="value-box">
+                                <div class="value-label">Battery Rating</div>
+                                <div class="value">
+                                    <span id="battVoltageRating">--</span> V
                                 </div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">MPPT Trackers</div>
-                                <div class=" value" id=" mpptTrackerCount">--</div>
+                            <div class="value-box">
+                                <div class="value-label">MPPT Trackers</div>
+                                <div class="value" id="mpptTrackerCount">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Topology</div>
-                                <div class=" value" id=" topology">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Topology</div>
+                                <div class="value" id="topology">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Parallel Type</div>
-                                <div class=" value" id=" parallelInverterType">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Parallel Type</div>
+                                <div class="value" id="parallelInverterType">--</div>
                             </div>
                         </div>
                     </div>
@@ -2001,45 +2001,45 @@
             <!-- ========================================================
                     AC TIMERS - HALF WIDTH
                     ======================================================== -->
-            <div class=" col-6">
+            <div class="col-6">
                 <details>
                     <summary>
                         AC Charge / Load Timers
-                        <span class=" chev">
-                            <svg width=" 18"
-                                 height=" 18"
-                                 viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" m6 9 6 6 6-6" />
+                        <span class="chev">
+                            <svg width="18"
+                                 height="18"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
                             </svg>
                         </span>
                     </summary>
 
-                    <div class=" collapsible-content">
-                        <div class=" value-grid">
+                    <div class="collapsible-content">
+                        <div class="value-grid">
 
-                            <div class=" value-box">
-                                <div class=" value-label">Charge Start</div>
-                                <div class=" value" id=" acctStart">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Charge Start</div>
+                                <div class="value" id="acctStart">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Charge End</div>
-                                <div class=" value" id=" acctEnd">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Charge End</div>
+                                <div class="value" id="acctEnd">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Load Start</div>
-                                <div class=" value" id=" acltStart">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Load Start</div>
+                                <div class="value" id="acltStart">--</div>
                             </div>
 
-                            <div class=" value-box">
-                                <div class=" value-label">Load End</div>
-                                <div class=" value" id=" acltEnd">--</div>
+                            <div class="value-box">
+                                <div class="value-label">Load End</div>
+                                <div class="value" id="acltEnd">--</div>
                             </div>
 
                         </div>
@@ -2050,27 +2050,27 @@
             <!-- ========================================================
                     FLAGS - HALF WIDTH
                     ======================================================== -->
-            <div class=" col-6">
+            <div class="col-6">
                 <details>
                     <summary>
                         System Flags
-                        <span class=" chev">
-                            <svg width=" 18"
-                                 height=" 18"
-                                 viewBox=" 0 0 24 24"
-                                 fill=" none"
-                                 stroke=" currentColor"
-                                 stroke-width=" 2"
-                                 stroke-linecap=" round"
-                                 stroke-linejoin=" round">
-                                <path d=" m6 9 6 6 6-6" />
+                        <span class="chev">
+                            <svg width="18"
+                                 height="18"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
                             </svg>
                         </span>
                     </summary>
-                    <div class=" collapsible-content">
-                        <div id=" flagsContainer"
-                             style=" display:flex;flex-wrap:wrap;gap:10px">
-                            <span style=" color:var(--muted);font-size:13px">
+                    <div class="collapsible-content">
+                        <div id="flagsContainer"
+                             style="display:flex;flex-wrap:wrap;gap:10px">
+                            <span style="color:var(--muted);font-size:13px">
                                 Waiting for data…
                             </span>
                         </div>
@@ -2082,1046 +2082,683 @@
         <!-- ==========================================================
                 FOOTER
                 ========================================================== -->
-        <div class=" footer">
+        <div class="footer">
             Last update:
-            <span id=" lastUpdate">never</span>
+            <span id="lastUpdate">never</span>
             · polling <code>/api/data</code>
         </div>
     </div>
 
     <script>
-                    "use strict";
+        "use strict";
 
-                    /* ============================================================
-                        THEME
-                        ============================================================ */
-                    (function () {
-                        const root = document.documentElement;
-                        const btn = document.getElementById("themeToggle");
-                        const label = document.getElementById("themeLabel");
+        /* ============================================================
+            THEME
+            ============================================================ */
+        (function () {
+            const root = document.documentElement;
+            const btn = document.getElementById("themeToggle");
+            const label = document.getElementById("themeLabel");
 
-                        const saved = (function () {
-                            try {
-                                return localStorage.getItem("inv-theme");
-                            } catch (e) {
-                                return null;
-                            }
-                        })();
+            const saved = (function () {
+                try {
+                    return localStorage.getItem("inv-theme");
+                } catch (e) {
+                    return null;
+                }
+            })();
 
-                        if (saved) {
-                            root.setAttribute("data-theme", saved);
-                        }
+            if (saved) {
+                root.setAttribute("data-theme", saved);
+            }
 
-                        function sync() {
-                            const dark = root.getAttribute("data-theme") === "dark";
-                            label.textContent = dark ? "Light" : "Dark";
-                            document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#0b1220" : "#eef2f8");
-                        }
+            function sync() {
+                const dark = root.getAttribute("data-theme") === "dark";
+                label.textContent = dark ? "Light" : "Dark";
+                document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#0b1220" : "#eef2f8");
+            }
 
-                        sync();
+            sync();
 
-                        btn.addEventListener("click", function () {
-                            const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-                            root.setAttribute("data-theme", next);
+            btn.addEventListener("click", function () {
+                const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+                root.setAttribute("data-theme", next);
 
-                            try {
-                                localStorage.setItem("inv-theme", next);
-                            } catch (e) { }
+                try {
+                    localStorage.setItem("inv-theme", next);
+                } catch (e) { }
 
-                            sync();
-                        });
-                    })();
+                sync();
+            });
+        })();
 
-                    /* ============================================================
-                        ANIMATED COLLAPSIBLES
+        /* ============================================================
+            ANIMATED COLLAPSIBLES
 
-                        All details elements start closed because none of them
-                        contains the "open" attribute.
-                        ============================================================ */
-                    (function () {
+            All details elements start closed because none of them
+            contains the "open" attribute.
+            ============================================================ */
+        (function () {
 
-                        document.querySelectorAll("details").forEach((details) => {
-                            const summary = details.querySelector("summary");
-                            const content = details.querySelector(".collapsible-content");
-                            const chev = summary ? summary.querySelector(".chev") : null;
+            document.querySelectorAll("details").forEach((details) => {
+                const summary = details.querySelector("summary");
+                const content = details.querySelector(".collapsible-content");
+                const chev = summary ? summary.querySelector(".chev") : null;
 
-                            if (!summary || !content) return;
+                if (!summary || !content) return;
 
-                            let animation = null;
-                            let isClosing = false;
-                            let isExpanding = false;
+                let animation = null;
+                let isClosing = false;
+                let isExpanding = false;
 
-                            summary.addEventListener("click", (e) => {
-                                e.preventDefault();
-                                details.style.overflow = "hidden";
+                summary.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    details.style.overflow = "hidden";
 
-                                if (isClosing || !details.open) {
-                                    openPanel();
-                                } else if (isExpanding || details.open) {
-                                    closePanel();
-                                }
-                            });
+                    if (isClosing || !details.open) {
+                        openPanel();
+                    } else if (isExpanding || details.open) {
+                        closePanel();
+                    }
+                });
 
-                            function openPanel() {
-                                details.style.height = details.offsetHeight + "px";
-                                details.open = true;
+                function openPanel() {
+                    details.style.height = details.offsetHeight + "px";
+                    details.open = true;
 
-                                if (chev) {
-                                    chev.style.transform = "rotate(180deg)";
-                                }
-
-                                requestAnimationFrame(() => {
-                                    isExpanding = true;
-                                    const startHeight = details.offsetHeight;
-                                    const endHeight = summary.offsetHeight + content.offsetHeight;
-                                    runAnimation(startHeight, endHeight, true);
-                                });
-                            }
-
-                            function closePanel() {
-                                isClosing = true;
-
-                                if (chev) {
-                                    chev.style.transform = "rotate(0deg)";
-                                }
-                                const startHeight = details.offsetHeight;
-                                const endHeight = summary.offsetHeight;
-                                runAnimation(startHeight, endHeight, false);
-                            }
-
-                            function runAnimation(startHeight, endHeight, opening) {
-
-                                if (animation) {
-                                    animation.cancel();
-                                }
-
-                                animation = details.animate(
-                                    {
-                                        height: [
-                                            startHeight + "px",
-                                            endHeight + "px"
-                                        ]
-                                    },
-                                    {
-                                        duration: 320,
-                                        easing: "cubic-bezier(0.22, 1, 0.36, 1)"
-                                    }
-                                );
-
-                                content.animate(
-                                    opening
-                                        ? [
-                                            {
-                                                opacity: 0,
-                                                transform: "translateY(-6px)"
-                                            },
-                                            {
-                                                opacity: 1,
-                                                transform: "translateY(0)"
-                                            }
-                                        ]
-                                        : [
-                                            {
-                                                opacity: 1,
-                                                transform: "translateY(0)"
-                                            },
-                                            {
-                                                opacity: 0,
-                                                transform: "translateY(-6px)"
-                                            }
-                                        ],
-                                    {
-                                        duration: opening ? 260 : 180,
-                                        easing: "ease",
-                                        fill: "forwards"
-                                    }
-                                );
-
-                                animation.onfinish = () => finish(opening);
-
-                                animation.oncancel = () => {
-                                    isClosing = false;
-                                    isExpanding = false;
-                                };
-                            }
-
-                            function finish(open) {
-                                details.open = open;
-                                animation = null;
-                                isClosing = false;
-                                isExpanding = false;
-                                details.style.height = "";
-                                details.style.overflow = "";
-                            }
-                        });
-                    })();
-
-                    /* ============================================================
-                        HELPERS
-                        ============================================================ */
-                    const $ = (id) => document.getElementById(id);
-                    const CIRC = 2 * Math.PI * 52;
-
-                    /* ============================================================
-                        ANIMATED NUMBER TWEEN
-                        ============================================================ */
-                    const tweens = {};
-
-                    function setNum(id, to, decimals) {
-                        const el = $(id);
-                        if (!el) return;
-                        to = Number(to);
-                        if (!isFinite(to)) {
-                            el.textContent = "--";
-                            return;
-                        }
-
-                        decimals = decimals || 0;
-                        const from = tweens[id] !== undefined ? tweens[id] : to;
-                        const start = performance.now();
-                        const dur = 500;
-
-                        function step(now) {
-                            const t = Math.min(1, (now - start) / dur);
-                            const eased = 1 - Math.pow(1 - t, 3);
-                            const val = from + (to - from) * eased;
-                            el.textContent = val.toFixed(decimals);
-
-                            if (t < 1) {
-                                requestAnimationFrame(step);
-                            } else {
-                                tweens[id] = to;
-                            }
-                        }
-
-                        tweens[id] = from;
-                        requestAnimationFrame(step);
+                    if (chev) {
+                        chev.style.transform = "rotate(180deg)";
                     }
 
-                    function setText(id, val) {
-                        const el = $(id);
+                    requestAnimationFrame(() => {
+                        isExpanding = true;
+                        const startHeight = details.offsetHeight;
+                        const endHeight = summary.offsetHeight + content.offsetHeight;
+                        runAnimation(startHeight, endHeight, true);
+                    });
+                }
 
-                        if (el && val !== undefined && val !== null) {
-                            el.textContent = val;
-                        }
+                function closePanel() {
+                    isClosing = true;
+
+                    if (chev) {
+                        chev.style.transform = "rotate(0deg)";
+                    }
+                    const startHeight = details.offsetHeight;
+                    const endHeight = summary.offsetHeight;
+                    runAnimation(startHeight, endHeight, false);
+                }
+
+                function runAnimation(startHeight, endHeight, opening) {
+
+                    if (animation) {
+                        animation.cancel();
                     }
 
-                    function setGauge(id, pct) {
-                        const el = $(id);
-                        if (!el) return;
-                        pct = Math.max(0, Math.min(100, pct));
-                        el.style.strokeDashoffset = CIRC * (1 - pct / 100);
-                    }
-
-                    function setBar(id, pct) {
-                        const el = $(id);
-                        if (el) {
-                            el.style.width = Math.max(0, Math.min(100, pct)) + "%";
-                        }
-                    }
-
-                    function setStale(stale) {
-
-                        document.querySelectorAll(".card, .summary, details").forEach((c) => {
-                                c.classList.toggle("stale", stale);
-                            });
-                    }
-
-                    /* ============================================================
-                        STATUS
-                        ============================================================ */
-                    function setStatus(text, online) {
-                        setText("systemStatus", text);
-                        const dot = $("systemDot");
-
-                        dot.className =
-                            "status-dot " +
-                            (online
-                                ? "online"
-                                : "offline");
-
-                        $("offlineBanner")
-                            .classList
-                            .toggle(
-                                "show",
-                                !online
-                            );
-                    }
-
-                    /* ============================================================
-                        FLAGS
-                        ============================================================ */
-                    const FLAGS = [
-
+                    animation = details.animate(
                         {
-                            key: "buzzerEnabled",
-                            label: "Buzzer"
+                            height: [
+                                startHeight + "px",
+                                endHeight + "px"
+                            ]
                         },
-
                         {
-                            key: "overloadBypass",
-                            label: "Overload Bypass"
-                        },
-
-                        {
-                            key: "lcdTimeout",
-                            label: "LCD Timeout"
-                        },
-
-                        {
-                            key: "overloadRestart",
-                            label: "Overload Restart"
-                        },
-
-                        {
-                            key: "overTempRestart",
-                            label: "Overtemperature Restart"
-                        },
-
-                        {
-                            key: "backlightOn",
-                            label: "Backlight"
-                        },
-
-                        {
-                            key: "alarmPrimaryInput",
-                            label: "Primary Input Alarm"
-                        },
-
-                        {
-                            key: "faultCodeRecord",
-                            label: "Fault Code Record"
+                            duration: 320,
+                            easing: "cubic-bezier(0.22, 1, 0.36, 1)"
                         }
-
-                    ];
-
-                    /* ============================================================
-                        RENDER
-                        ------------------------------------------------------------
-                        The ESP32 now serializes the InverterData object directly,
-                        so the payload arrives nested by command class instead of
-                        flat: data.GS, data.MOD, data.FLAG, data.PIRI, data.ACCT,
-                        data.ACLT (mirroring the InverterData C# class). Each is
-                        aliased to a short local const below and defaulted to an
-                        empty object so a not-yet-populated class (e.g. PIRI before
-                        its first successful poll) can't throw on property access.
-
-                        wifiConnected / valid / inverterAge are assumed to still be
-                        top-level fields added by the HTTP handler alongside the
-                        serialized InverterData object -- adjust here if that
-                        wrapper shape changes.
-                        ============================================================ */
-                    function render(data) {
-
-                        const G =
-                            data.GS || {};
-
-                        const M =
-                            data.MOD || {};
-
-                        const F =
-                            data.FLAG || {};
-
-                        const P =
-                            data.PIRI || {};
-
-                        const AT =
-                            data.ACCT || {};
-
-                        const AL =
-                            data.ACLT || {};
-
-                        /* ----------------------------------------------------------
-                            CONNECTION
-                            ---------------------------------------------------------- */
-                        if (!data.wifiConnected) {
-
-                            setStatus("WiFi Disconnected", false);
-                            setStale(true);
-                            return;
-                        }
-
-                        if (!data.valid && !G.valid) {
-
-                            setStatus(
-                                "Waiting for inverter",
-                                false
-                            );
-
-                            setStale(true);
-
-                            return;
-                        }
-
-                        if (data.inverterAge <= 10) {
-                            setStatus("Inverter Connected", true);
-                            setStale(false);
-
-                        } else {
-                            setStatus("Inverter Data Stale", false);
-                            setStale(true);
-                        }
-
-                        /* ----------------------------------------------------------
-                            GRID
-                            ---------------------------------------------------------- */
-                        setNum("gridVoltage", G.gridVoltage, 1);
-
-                        setNum("gridFrequency", G.gridFrequency, 1);
-
-                        setNum("estimatedGridPower", G.estimatedGridPower, 0);
-
-                        setNum("estimatedGridKWh", G.dailyEstimatedGridKWh, 3);
-
-                        const gridStatusEl = $("gridStatus");
-
-                        if (G.gridAvailable) {
-                            gridStatusEl.textContent = "ONLINE";
-                            gridStatusEl.className = "badge good";
-
-                        } else {
-                            gridStatusEl.textContent = "OFFLINE";
-                            gridStatusEl.className = "badge bad";
-                        }
-
-                        /* ----------------------------------------------------------
-                            OUTPUT / LOAD
-                            ---------------------------------------------------------- */
-                        setNum("outputVoltage", G.outputVoltage, 1);
-                        setNum("outputFrequency", G.outputFrequency, 1);
-                        setNum("outputWatts", G.outputWatts, 0);
-                        setNum("outputVA", G.outputVA, 0);
-                        setNum("dailyOutputEnergyKWh", G.dailyOutputEnergyKWh, 3);
-                        const load = Math.max(0, Math.min(100, Number(G.loadPercent) || 0));
-                        setNum("loadPercentLabel", load, 0);
-                        setBar("loadBar", load);
-
-                        /* ----------------------------------------------------------
-                            BATTERY
-                            ---------------------------------------------------------- */
-                        const batteryVoltage = Number(G.batteryVoltage) || 0;
-                        const batteryChargeAmps = Number(G.batteryChargeAmps) || 0;
-                        const batteryDischargeAmps = Number(G.batteryDischargeAmps) || 0;
-                        const battPct = Math.max(0, Math.min(100, Number(G.batteryPercentage) || 0));
-                        setNum("batteryVoltage", batteryVoltage, 1);
-                        setNum("batteryChargeAmps", batteryChargeAmps, 1);
-                        setNum("batteryDischargeAmps", batteryDischargeAmps, 1);
-                        setNum("batteryChargeKWh", G.dailyBatteryChargeKWh, 3);
-                        setNum("batteryDischargeKWh", G.dailyBatteryDischargeKWh, 3);
-                        setNum("battPercent", battPct, 0);
-                        setGauge("battGauge", battPct);
-
-                        const bg = $("battGauge");
-                        if (bg) {
-                            bg.style.stroke = battPct < 20 ? "var(--discharge)" : battPct < 50 ? "var(--amber)" : "var(--charge)";
-                        }
-
-                        const bstat = $("batteryStatus");
-
-                        if (batteryChargeAmps > 0.5) {
-
-                            bstat.textContent = "CHARGING";
-                            bstat.className = "badge good";
-
-                        } else if (batteryDischargeAmps > 0.5) {
-
-                            bstat.textContent = "DISCHARGING";
-                            bstat.className = "badge bad";
-
-                        } else {
-                            bstat.textContent = "IDLE";
-                            bstat.className = "badge";
-                        }
-
-                        /* ----------------------------------------------------------
-                            SOLAR / PV
-                            ---------------------------------------------------------- */
-                        const pvV =
-                            Number(G.pv1InputVoltage) || 0;
-
-                        const pvW =
-                            Number(G.pv1InputWatts) || 0;
-
-                        setNum(
-                            "pvInputVoltage",
-                            pvV,
-                            1
-                        );
-
-                        setNum(
-                            "pvInputWatts",
-                            pvW,
-                            0
-                        );
-
-                        setNum(
-                            "pvInputAmps",
-                            pvV > 0
-                                ? pvW / pvV
-                                : 0,
-                            1
-                        );
-
-                        setNum(
-                            "pvInputKWh",
-                            G.dailyPVInputKWh,
-                            3
-                        );
-
-                        setBar(
-                            "pvBar",
-                            Math.min(
-                                100,
-                                (pvW / 5000) * 100
-                            )
-                        );
-
-                        $("pvBarLabel").textContent =
-                            pvW.toFixed(0) + " W";
-
-                        /* ----------------------------------------------------------
-                            TEMPERATURE
-                            ---------------------------------------------------------- */
-                        const temp =
-                            Number(G.inverterTemp) || 0;
-
-                        setNum(
-                            "inverterTemp",
-                            temp,
-                            0
-                        );
-
-                        setGauge(
-                            "tempGauge",
-                            (temp / 90) * 100
-                        );
-
-                        const tg =
-                            $("tempGauge");
-
-                        const tb =
-                            $("tempBadge");
-
-                        if (tg && tb) {
-
-                            if (temp >= 70) {
-
-                                tg.style.stroke =
-                                    "var(--discharge)";
-
-                                tb.textContent =
-                                    "HOT";
-
-                                tb.className =
-                                    "badge bad";
-
-                            } else if (temp >= 50) {
-
-                                tg.style.stroke =
-                                    "var(--amber)";
-
-                                tb.textContent =
-                                    "WARM";
-
-                                tb.className =
-                                    "badge";
-
-                            } else {
-
-                                tg.style.stroke =
-                                    "var(--charge)";
-
-                                tb.textContent =
-                                    "NORMAL";
-
-                                tb.className =
-                                    "badge good";
-                            }
-                        }
-
-                        /* ----------------------------------------------------------
-                            SUMMARY
-                            ---------------------------------------------------------- */
-                        setNum(
-                            "sumBattery",
-                            battPct,
-                            0
-                        );
-
-                        setText(
-                            "sumBatteryV",
-                            batteryVoltage.toFixed(1) + " V"
-                        );
-
-                        setNum(
-                            "sumSolar",
-                            pvW,
-                            0
-                        );
-
-                        setText(
-                            "sumSolarV",
-                            pvV.toFixed(1) + " V"
-                        );
-
-                        setNum(
-                            "sumLoad",
-                            load,
-                            0
-                        );
-
-                        setText(
-                            "sumLoadW",
-                            (Number(G.outputWatts) || 0)
-                                .toFixed(0) + " W"
-                        );
-
-                        setNum(
-                            "sumTemp",
-                            temp,
-                            0
-                        );
-
-                        setText(
-                            "sumTempState",
-                            temp >= 70
-                                ? "Running hot"
-                                : temp >= 50
-                                    ? "Warm"
-                                    : "Nominal"
-                        );
-
-                        /* ----------------------------------------------------------
-                            ENERGY FLOW
-                            ---------------------------------------------------------- */
-                        const gridW =
-                            Number(G.estimatedGridPower) || 0;
-
-                        const solarLow =
-                            pvW < 50;
-
-                        setNum(
-                            "flowSolar",
-                            pvW,
-                            0
-                        );
-
-                        setNum(
-                            "flowGrid",
-                            gridW,
-                            0
-                        );
-
-                        setNum(
-                            "flowBatt",
-                            battPct,
-                            0
-                        );
-
-                        setNum(
-                            "flowLoad",
-                            G.outputWatts,
-                            0
-                        );
-
-                        const nodeSolar =
-                            $("flowNodeSolar");
-
-                        const nodeGrid =
-                            $("flowNodeGrid");
-
-                        nodeSolar.classList.toggle(
-                            "hidden",
-                            solarLow
-                        );
-
-                        nodeGrid.classList.toggle(
-                            "hidden",
-                            !solarLow
-                        );
-
-                        nodeSolar.classList.toggle(
-                            "source-active",
-                            !solarLow && pvW > 5
-                        );
-
-                        nodeGrid.classList.toggle(
-                            "source-active",
-                            solarLow &&
-                            G.gridAvailable
-                        );
-
-                        $("flowArrow1").classList.toggle(
-                            "active",
-                            Number(G.batteryPowerDirection) === 1 ||
-                            (!solarLow && pvW > 5) ||
-                            (solarLow && gridW > 5)
-                        );
-
-                        $("flowArrow2").classList.toggle(
-                            "active",
-                            Number(G.loadConnected) === 1 &&
-                            Number(G.outputWatts) > 5
-                        );
-
-                        /* ----------------------------------------------------------
-                            SETTINGS / MOD / PIRI
-                            ---------------------------------------------------------- */
-                        setText(
-                            "outputMode",
-                            M.outputMode
-                        );
-
-                        setText(
-                            "outputPriority",
-                            P.outputSourcePriority
-                        );
-
-                        setText(
-                            "chargerPriority",
-                            P.chargerSourcePriority
-                        );
-
-                        setText(
-                            "solarPowerPriority",
-                            P.solarPowerPriority
-                        );
-
-                        setText(
-                            "batteryType",
-                            P.batteryConfigType
-                        );
-
-                        setText(
-                            "inputVoltageRange",
-                            P.inputVoltageRange
-                        );
-
-                        setText(
-                            "battBulk",
-                            P.battBulkChargingVoltage !== undefined
-                                ? Number(
-                                    P.battBulkChargingVoltage
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "battFloat",
-                            P.battFloatVoltage !== undefined
-                                ? Number(
-                                    P.battFloatVoltage
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "battCutoff",
-                            P.battCutoffVoltage !== undefined
-                                ? Number(
-                                    P.battCutoffVoltage
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "battStopDischarge",
-                            P.battStopDischargeVoltageOnGrid !== undefined
-                                ? Number(
-                                    P.battStopDischargeVoltageOnGrid
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "battStopCharge",
-                            P.battStopChargeVoltageOnGrid !== undefined
-                                ? Number(
-                                    P.battStopChargeVoltageOnGrid
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "maxACChargeCurrent",
-                            P.maxACChargeCurrent
-                        );
-
-                        setText(
-                            "maxTotalChargeCurrent",
-                            P.maxTotalChargeCurrent
-                        );
-
-                        setText(
-                            "outputWattRating",
-                            P.outputWattRating
-                        );
-
-                        setText(
-                            "outputVARating",
-                            P.outputVARating
-                        );
-
-                        setText(
-                            "outputCurrentRating",
-                            P.outputCurrentRating !== undefined
-                                ? Number(
-                                    P.outputCurrentRating
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "gridVoltageRating",
-                            P.gridVoltageRating !== undefined
-                                ? Number(
-                                    P.gridVoltageRating
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "gridCurrentRating",
-                            P.gridCurrentRating !== undefined
-                                ? Number(
-                                    P.gridCurrentRating
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "battVoltageRating",
-                            P.battVoltageRating !== undefined
-                                ? Number(
-                                    P.battVoltageRating
-                                ).toFixed(1)
-                                : "--"
-                        );
-
-                        setText(
-                            "mpptTrackerCount",
-                            P.mpptTrackerCount
-                        );
-
-                        setText(
-                            "topology",
-                            P.topology
-                        );
-
-                        setText(
-                            "parallelInverterType",
-                            P.parallelInverterType
-                        );
-
-                        /* ----------------------------------------------------------
-                            AC TIMERS
-                            ---------------------------------------------------------- */
-                        if (AT.startTime !== undefined) {
-
-                            setText(
-                                "acctStart",
-                                AT.startTime
-                            );
-
-                            setText(
-                                "acctEnd",
-                                AT.endTime
-                            );
-                        }
-
-                        if (AL.startTime !== undefined) {
-
-                            setText(
-                                "acltStart",
-                                AL.startTime
-                            );
-
-                            setText(
-                                "acltEnd",
-                                AL.endTime
-                            );
-                        }
-
-                        /* ----------------------------------------------------------
-                            FLAGS
-                            ---------------------------------------------------------- */
-                        const fc =
-                            $("flagsContainer");
-
-                        if (
-                            fc &&
-                            F.buzzerEnabled !== undefined
-                        ) {
-
-                            fc.innerHTML =
-                                FLAGS
-                                    .map((f) => {
-
-                                        const on =
-                                            !!F[f.key];
-
-                                        const dot =
-                                            on
-                                                ? "var(--charge)"
-                                                : "var(--muted)";
-
-                                        const bd =
-                                            on
-                                                ? "color-mix(in srgb, var(--charge) 45%, transparent)"
-                                                : "var(--border)";
-
-                                        return (
-                                            '<span class="flag" style="border-color:' +
-                                            bd +
-                                            '">' +
-                                            '<span class="fdot" style="background:' +
-                                            dot +
-                                            '"></span>' +
-                                            f.label +
-                                            "</span>"
-                                        );
-
-                                    })
-                                    .join("");
-                        }
-
-                        /* ----------------------------------------------------------
-                            FOOTER
-                            ---------------------------------------------------------- */
-                        lastUpdateAt =
-                            Date.now();
-
-                        updateFooterTime();
-                    }
-
-                    /* ============================================================
-                        FOOTER TIME
-                        ============================================================ */
-                    let lastUpdateAt = null;
-
-                    function updateFooterTime() {
-
-                        if (lastUpdateAt === null) {
-                            return;
-                        }
-
-                        const secs =
-                            Math.round(
-                                (Date.now() - lastUpdateAt) /
-                                1000
-                            );
-
-                        let label;
-
-                        if (secs < 2) {
-
-                            label = "just now";
-
-                        } else if (secs < 60) {
-
-                            label =
-                                secs + "s ago";
-
-                        } else {
-
-                            label =
-                                Math.floor(secs / 60) +
-                                "m ago";
-                        }
-
-                        setText(
-                            "lastUpdate",
-                            label
-                        );
-                    }
-
-                    setInterval(
-                        updateFooterTime,
-                        1000
                     );
 
-                    /* ============================================================
-                        DATA POLLING
-                        ============================================================ */
-                    async function updateData() {
-
-                        try {
-
-                            const res =
-                                await fetch(
-                                    "/api/data",
-                                    {
-                                        cache: "no-store"
-                                    }
-                                );
-
-                            if (!res.ok) {
-                                throw new Error(
-                                    "HTTP " + res.status
-                                );
-                            }
-
-                            const data =
-                                await res.json();
-
-                            render(data);
-
-                        } catch (err) {
-
-                            console.log(
-                                "[v0] /api/data request failed:",
-                                err.message
-                            );
-
-                            setStatus(
-                                "Connection issue",
-                                false
-                            );
-
-                            setStale(true);
+                    content.animate(
+                        opening
+                            ? [
+                                {
+                                    opacity: 0,
+                                    transform: "translateY(-6px)"
+                                },
+                                {
+                                    opacity: 1,
+                                    transform: "translateY(0)"
+                                }
+                            ]
+                            : [
+                                {
+                                    opacity: 1,
+                                    transform: "translateY(0)"
+                                },
+                                {
+                                    opacity: 0,
+                                    transform: "translateY(-6px)"
+                                }
+                            ],
+                        {
+                            duration: opening ? 260 : 180,
+                            easing: "ease",
+                            fill: "forwards"
                         }
-                    }
+                    );
 
-                    /* ============================================================
-                        REFRESH CONTROL
-                        ============================================================ */
-                    let refreshInterval = 1000;
-                    let refreshTimer = null;
+                    animation.onfinish = () => finish(opening);
 
-                    function startTimer() {
+                    animation.oncancel = () => {
+                        isClosing = false;
+                        isExpanding = false;
+                    };
+                }
 
-                        if (refreshTimer) {
-                            clearInterval(
-                                refreshTimer
+                function finish(open) {
+                    details.open = open;
+                    animation = null;
+                    isClosing = false;
+                    isExpanding = false;
+                    details.style.height = "";
+                    details.style.overflow = "";
+                }
+            });
+        })();
+
+        /* ============================================================
+            HELPERS
+            ============================================================ */
+        const $ = (id) => document.getElementById(id);
+        const CIRC = 2 * Math.PI * 52;
+
+        /* ============================================================
+            ANIMATED NUMBER TWEEN
+            ============================================================ */
+        const tweens = {};
+
+        function setNum(id, to, decimals) {
+            const el = $(id);
+            if (!el) return;
+            to = Number(to);
+            if (!isFinite(to)) {
+                el.textContent = "--";
+                return;
+            }
+
+            decimals = decimals || 0;
+            const from = tweens[id] !== undefined ? tweens[id] : to;
+            const start = performance.now();
+            const dur = 500;
+
+            function step(now) {
+                const t = Math.min(1, (now - start) / dur);
+                const eased = 1 - Math.pow(1 - t, 3);
+                const val = from + (to - from) * eased;
+                el.textContent = val.toFixed(decimals);
+
+                if (t < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    tweens[id] = to;
+                }
+            }
+
+            tweens[id] = from;
+            requestAnimationFrame(step);
+        }
+
+        function setText(id, val) {
+            const el = $(id);
+
+            if (el && val !== undefined && val !== null) {
+                el.textContent = val;
+            }
+        }
+
+        function setGauge(id, pct) {
+            const el = $(id);
+            if (!el) return;
+            pct = Math.max(0, Math.min(100, pct));
+            el.style.strokeDashoffset = CIRC * (1 - pct / 100);
+        }
+
+        function setBar(id, pct) {
+            const el = $(id);
+            if (el) {
+                el.style.width = Math.max(0, Math.min(100, pct)) + "%";
+            }
+        }
+
+        function setStale(stale) {
+
+            document.querySelectorAll(".card, .summary, details").forEach((c) => {
+                c.classList.toggle("stale", stale);
+            });
+        }
+
+        /* ============================================================
+            STATUS
+            ============================================================ */
+        function setStatus(text, online) {
+            setText("systemStatus", text);
+            const dot = $("systemDot");
+
+            if (dot) {
+                dot.className =
+                    "status-dot " +
+                    (online
+                        ? "online"
+                        : "offline");
+            }
+
+            const banner = $("offlineBanner");
+
+            if (banner) {
+                banner.classList.toggle(
+                    "show",
+                    !online
+                );
+            }
+        }
+
+        /* ============================================================
+            FLAGS
+            ============================================================ */
+        const FLAGS = [
+
+            {
+                key: "buzzerEnabled",
+                label: "Buzzer"
+            },
+
+            {
+                key: "overloadBypass",
+                label: "Overload Bypass"
+            },
+
+            {
+                key: "lcdTimeout",
+                label: "LCD Timeout"
+            },
+
+            {
+                key: "overloadRestart",
+                label: "Overload Restart"
+            },
+
+            {
+                key: "overTempRestart",
+                label: "Overtemperature Restart"
+            },
+
+            {
+                key: "backlightOn",
+                label: "Backlight"
+            },
+
+            {
+                key: "alarmPrimaryInput",
+                label: "Primary Input Alarm"
+            },
+
+            {
+                key: "faultCodeRecord",
+                label: "Fault Code Record"
+            }
+
+        ];
+
+        /* ============================================================
+            RENDER
+            ------------------------------------------------------------
+            The ESP32 now serializes the InverterData object directly,
+            so the payload arrives nested by command class instead of
+            flat: data.GS, data.MOD, data.FLAG, data.PIRI, data.ACCT,
+            data.ACLT (mirroring the InverterData C# class). Each is
+            aliased to a short local const below and defaulted to an
+            empty object so a not-yet-populated class (e.g. PIRI before
+            its first successful poll) can't throw on property access.
+            ============================================================ */
+        function render(data) {
+
+            const G =
+                data.GS || {};
+
+            const M =
+                data.MOD || {};
+
+            const F =
+                data.FLAG || {};
+
+            const P =
+                data.PIRI || {};
+
+            const AT =
+                data.ACCT || {};
+
+            const AL =
+                data.ACLT || {};
+
+            /* ----------------------------------------------------------
+                CONNECTION
+                ------------------------------------------------------------
+                The payload has no top-level wifiConnected/valid fields --
+                only each command class (GS, MOD, PIRI, ...) carries its
+                own "valid" flag. GS is the primary telemetry class, so
+                it's the one that determines whether we have real data to
+                show. A genuine WiFi/network loss is already caught by the
+                try/catch in updateData() below (the fetch itself throws),
+                so there's no separate wifiConnected check needed here.
+                ---------------------------------------------------------- */
+            if (!G.valid) {
+
+                setStatus(
+                    "Waiting for inverter",
+                    false
+                );
+
+                setStale(true);
+
+                return;
+            }
+
+            /* inverterAge isn't in the payload yet (only per-class
+               "valid" flags are) -- until it's added back server-side,
+               treat "unknown age" as fine rather than permanently
+               stale, since we already gated above on G.valid. */
+            const age = Number(data.inverterAge);
+
+            if (!isFinite(age) || age <= 10) {
+                setStatus("Inverter Connected", true);
+                setStale(false);
+
+            } else {
+                setStatus("Inverter Data Stale", false);
+                setStale(true);
+            }
+
+            /* ----------------------------------------------------------
+                GRID
+                ---------------------------------------------------------- */
+            setNum("gridVoltage", G.gridVoltage, 1);
+            setNum("gridFrequency", G.gridFrequency, 1);
+            setNum("estimatedGridPower", G.estimatedGridPower, 0);
+            setNum("estimatedGridKWh", G.dailyEstimatedGridKWh, 3);
+            const gridStatusEl = $("gridStatus");
+            if (G.gridAvailable) {
+                gridStatusEl.textContent = "ONLINE";
+                gridStatusEl.className = "badge good";
+
+            } else {
+                gridStatusEl.textContent = "OFFLINE";
+                gridStatusEl.className = "badge bad";
+            }
+
+            /* ----------------------------------------------------------
+                OUTPUT / LOAD
+                ---------------------------------------------------------- */
+            setNum("outputVoltage", G.outputVoltage, 1);
+            setNum("outputFrequency", G.outputFrequency, 1);
+            setNum("outputWatts", G.outputWatts, 0);
+            setNum("outputVA", G.outputVA, 0);
+            setNum("dailyOutputEnergyKWh", G.dailyOutputEnergyKWh, 3);
+            const load = Math.max(0, Math.min(100, Number(G.loadPercent) || 0));
+            setNum("loadPercentLabel", load, 0);
+            setBar("loadBar", load);
+
+            /* ----------------------------------------------------------
+                BATTERY
+                ---------------------------------------------------------- */
+            const batteryVoltage = Number(G.batteryVoltage) || 0;
+            const batteryChargeAmps = Number(G.batteryChargeAmps) || 0;
+            const batteryDischargeAmps = Number(G.batteryDischargeAmps) || 0;
+            const battPct = Math.max(0, Math.min(100, Number(G.batteryPercentage) || 0));
+            setNum("batteryVoltage", batteryVoltage, 1);
+            setNum("batteryChargeAmps", batteryChargeAmps, 1);
+            setNum("batteryDischargeAmps", batteryDischargeAmps, 1);
+            setNum("batteryChargeKWh", G.dailyBatteryChargeKWh, 3);
+            setNum("batteryDischargeKWh", G.dailyBatteryDischargeKWh, 3);
+            setNum("battPercent", battPct, 0);
+            setGauge("battGauge", battPct);
+
+            const bg = $("battGauge");
+            if (bg) {
+                bg.style.stroke = battPct < 20 ? "var(--discharge)" : battPct < 50 ? "var(--amber)" : "var(--charge)";
+            }
+
+            const bstat = $("batteryStatus");
+
+            if (batteryChargeAmps > 0.5) {
+
+                bstat.textContent = "CHARGING";
+                bstat.className = "badge good";
+
+            } else if (batteryDischargeAmps > 0.5) {
+
+                bstat.textContent = "DISCHARGING";
+                bstat.className = "badge bad";
+
+            } else {
+                bstat.textContent = "IDLE";
+                bstat.className = "badge";
+            }
+
+            /* ----------------------------------------------------------
+                SOLAR / PV
+                ---------------------------------------------------------- */
+            const pvV = Number(G.pv1InputVoltage) || 0;
+            const pvW = Number(G.pv1InputWatts) || 0;
+
+            setNum("pvInputVoltage", pvV, 1);
+            setNum("pvInputWatts", pvW, 0);
+            setNum("pvInputAmps", pvV > 0 ? pvW / pvV : 0, 1);
+            setNum("pvInputKWh", G.dailyPVInputKWh, 3);
+            setBar("pvBar", Math.min(100, (pvW / 5000) * 100));
+            $("pvBarLabel").textContent = pvW.toFixed(0) + " W";
+
+            /* ----------------------------------------------------------
+                TEMPERATURE
+                ---------------------------------------------------------- */
+            const temp = Number(G.inverterTemp) || 0;
+            setNum("inverterTemp", temp, 0);
+            setGauge("tempGauge", (temp / 90) * 100);
+            
+            const tg = $("tempGauge");
+            const tb = $("tempBadge");
+            if (tg && tb) {
+                if (temp >= 70) {
+                    tg.style.stroke = "var(--discharge)";
+                    tb.textContent = "HOT";
+                    tb.className = "badge bad";
+
+                } else if (temp >= 50) {
+                    tg.style.stroke = "var(--amber)";
+                    tb.textContent = "WARM";
+                    tb.className = "badge";
+
+                } else {
+                    tg.style.stroke = "var(--charge)";
+                    tb.textContent = "NORMAL";
+                    tb.className = "badge good";
+                }
+            }
+
+            /* ----------------------------------------------------------
+                SUMMARY
+                ---------------------------------------------------------- */
+            setNum("sumBattery", battPct, 0);
+            setText("sumBatteryV", batteryVoltage.toFixed(1) + " V");
+            setNum("sumSolar", pvW, 0);
+            setText("sumSolarV", pvV.toFixed(1) + " V");
+            setNum("sumLoad", load,0);
+            setText("sumLoadW", (Number(G.outputWatts) || 0).toFixed(0) + " W");
+            setNum("sumTemp", temp, 0);
+            setText("sumTempState", temp >= 70 ? "Running hot" : temp >= 51 ? "Warm" : "Nominal");
+
+            /* ----------------------------------------------------------
+                ENERGY FLOW
+                ---------------------------------------------------------- */
+            const gridW = Number(G.estimatedGridPower) || 0;
+            const solarLow = pvW < 50;
+            setNum("flowSolar", pvW, 0);
+            setNum("flowGrid", gridW,0);
+            setNum("flowBatt",battPct,0);
+            setNum("flowLoad", G.outputWatts, 0);
+
+            const nodeSolar = $("flowNodeSolar");
+            const nodeGrid = $("flowNodeGrid");
+            nodeSolar.classList.toggle("hidden", solarLow);
+            nodeGrid.classList.toggle("hidden", !solarLow);
+            nodeSolar.classList.toggle("source-active", !solarLow && pvW > 5);
+            nodeGrid.classList.toggle("source-active", solarLow && G.gridAvailable);
+            $("flowArrow1").classList.toggle("active", Number(G.batteryPowerDirection) === 1 ||
+                (!solarLow && pvW > 5) || (solarLow && gridW > 5));
+            $("flowArrow2").classList.toggle("active", Number(G.loadConnected) === 1 &&
+                Number(G.outputWatts) > 5);
+
+            /* ----------------------------------------------------------
+                SETTINGS / MOD / PIRI
+                ---------------------------------------------------------- */
+            setText("outputMode", M.outputMode);
+            setText("outputPriority", P.outputSourcePriority);
+            setText("chargerPriority", P.chargerSourcePriority);
+            setText("solarPowerPriority", P.solarPowerPriority);
+            setText("batteryType", P.batteryConfigType);
+            setText("inputVoltageRange", P.inputVoltageRange);
+            setText("battBulk", P.battBulkChargingVoltage !== undefined ? Number(P.battBulkChargingVoltage).toFixed(1) : "--");
+            setText("battFloat", P.battFloatVoltage !== undefined ? Number(P.battFloatVoltage).toFixed(1) : "--");
+            setText("battCutoff", P.battCutoffVoltage !== undefined ? Number(P.battCutoffVoltage).toFixed(1) : "--");
+            setText("battStopDischarge", P.battStopDischargeVoltageOnGrid !== undefined ? Number(P.battStopDischargeVoltageOnGrid).toFixed(1) : "--");
+            setText("battStopCharge",P.battStopChargeVoltageOnGrid !== undefined ? Number(P.battStopChargeVoltageOnGrid).toFixed(1) : "--");
+            setText("maxACChargeCurrent", P.maxACChargeCurrent);
+            setText("maxTotalChargeCurrent", P.maxTotalChargeCurrent);
+            setText("outputWattRating", P.outputWattRating);
+            setText("outputVARating", P.outputVARating);
+            setText("outputCurrentRating", P.outputCurrentRating !== undefined? Number(P.outputCurrentRating).toFixed(1) : "--");
+            setText("gridVoltageRating", P.gridVoltageRating !== undefined ? Number(P.gridVoltageRating).toFixed(1) : "--");
+            setText("gridCurrentRating", P.gridCurrentRating !== undefined ? Number(P.gridCurrentRating).toFixed(1) : "--");
+            setText("battVoltageRating", P.battVoltageRating !== undefined ? Number(P.battVoltageRating).toFixed(1) : "--");
+            setText("mpptTrackerCount", P.mpptTrackerCount);
+            setText("topology", P.topology);
+            setText("parallelInverterType", P.parallelInverterType);
+
+            /* ----------------------------------------------------------
+                AC TIMERS
+                ---------------------------------------------------------- */
+            if (AT.startTime !== undefined) {
+                setText("acctStart", AT.startTime);
+                setText("acctEnd",AT.endTime);
+            }
+
+            if (AL.startTime !== undefined) {
+                setText("acltStart", AL.startTime);
+                setText("acltEnd", AL.endTime);
+            }
+
+            /* ----------------------------------------------------------
+                FLAGS
+                ---------------------------------------------------------- */
+            const fc = $("flagsContainer");
+
+            if (fc && F.buzzerEnabled !== undefined) {
+
+                fc.innerHTML =
+                    FLAGS
+                        .map((f) => {
+
+                            const on = !!F[f.key];
+                            const dot = on ? "var(--charge)" : "var(--muted)";
+                            const bd = on ? "color-mix(in srgb, var(--charge) 45%, transparent)" : "var(--border)";
+
+                            return (
+                                '<span class="flag" style="border-color:' + bd + '">' +
+                                '<span class="fdot" style="background:' + dot + '"></span>' + f.label + "</span>"
                             );
+                        })
+                        .join("");
+            }
+
+            /* ----------------------------------------------------------
+                FOOTER
+                ---------------------------------------------------------- */
+            lastUpdateAt = Date.now();
+            updateFooterTime();
+        }
+
+        /* ============================================================
+            FOOTER TIME
+            ============================================================ */
+        let lastUpdateAt = null;
+
+        function updateFooterTime() {
+
+            if (lastUpdateAt === null) {
+                return;
+            }
+
+            const secs = Math.round((Date.now() - lastUpdateAt) / 1000);
+
+            let label;
+
+            if (secs < 2) {
+                label = "just now";
+
+            } else if (secs < 60) {
+
+                label =
+                    secs + "s ago";
+
+            } else {
+
+                label =
+                    Math.floor(secs / 60) +
+                    "m ago";
+            }
+
+            setText("lastUpdate", label);
+        }
+
+        setInterval(updateFooterTime, 1000);
+
+        /* ============================================================
+            DATA POLLING
+            ============================================================ */
+        async function updateData() {
+
+            try {
+
+                const res = await fetch("api/data",
+                        {
+                            cache: "no-store"
                         }
+                    );
 
-                        refreshTimer =
-                            setInterval(
-                                updateData,
-                                refreshInterval
-                            );
-                    }
+                if (!res.ok) {
+                    throw new Error("HTTP " + res.status);
+                }
+                const data = await res.json();
+                render(data);
 
-                    $("refreshRate")
-                        .addEventListener(
-                            "change",
-                            function () {
+            } catch (err) {
+                console.log("[v0] /api/data request failed:", err.message);
+                setStatus("Connection issue", false);
+                setStale(true);
+            }
+        }
 
-                                refreshInterval =
-                                    Number(this.value);
+        /* ============================================================
+            REFRESH CONTROL
+            ============================================================ */
+        let refreshInterval = 1000;
+        let refreshTimer = null;
 
-                                startTimer();
-                            }
-                        );
+        function startTimer() {
+            if (refreshTimer) {
+                clearInterval(refreshTimer);
+            }
+            refreshTimer = setInterval(updateData, refreshInterval);
+        }
 
-                    /* ============================================================
-                        START
-                        ============================================================ */
-                    updateData();
+        $("refreshRate").addEventListener("change", function () {
+
+                    refreshInterval = Number(this.value);
                     startTimer();
+                }
+        );
 
+        updateData();
+        startTimer();
     </script>
-
 </body>
 </html>
