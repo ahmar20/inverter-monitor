@@ -76,7 +76,7 @@ namespace inverter_monitor
                             <title>Loading Dashboard...</title>
                             <script>
                                 // The code executes automatically when the browser reads this script
-                                const dashboardUrl = 'https://github.com/ahmar20/inverter-monitor/raw/refs/heads/master/page.html';
+                                const dashboardUrl = 'https://raw.githubusercontent.com/ahmar20/inverter-monitor/refs/heads/master/page.html';
 
                                 fetch(dashboardUrl)
                                   .then(response => {
