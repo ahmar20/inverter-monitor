@@ -39,9 +39,9 @@ namespace inverter_monitor
                         HandleApiData(e);
                         break;
 
-                    //case "/api/status":
-                    //    HandleApiStatus(e);
-                    //    break;
+                    case "/api/status":
+                        HandleApiStatus(e);
+                        break;
 
                     default:
                         SendNotFound(e);
@@ -71,32 +71,77 @@ namespace inverter_monitor
                 string htmlContent = @"<!DOCTYPE html>
                         <html lang=""en"">
                         <head>
-                            <meta charset=""UTF-8"">
-                            <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
-                            <title>Loading Dashboard...</title>
-                            <script>
-                                // The code executes automatically when the browser reads this script
-                                const dashboardUrl = 'https://raw.githubusercontent.com/ahmar20/inverter-monitor/refs/heads/master/page.html';
-
-                                fetch(dashboardUrl)
-                                  .then(response => {
-                                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-                                    return response.blob(); 
-                                  })
-                                  .then(blob => {
-                                    const htmlBlob = new Blob([blob], { type: 'text/html' });
-                                    const newPageUrl = URL.createObjectURL(htmlBlob);
-                                    window.location.replace(newPageUrl);
-                                  })
-                                  .catch(error => {
-                                    console.error('Failed to download or render the dashboard:', error);
-                                    document.body.innerHTML = '<h1>Error loading dashboard. Please try again later.</h1>';
-                                  });
-                            </script>
+                        <meta charset=""UTF-8"">
+                        <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+                        <title>Loading Dashboard...</title>
+                        <style>
+                            body {
+                                font-family: sans-serif;
+                                background: #0b1220;
+                                color: #e8edf5;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100vh;
+                                margin: 0;
+                            }
+                        </style>
                         </head>
                         <body>
-                            <!-- This message shows briefly while the file downloads -->
-                            <p>Loading your dashboard, please wait...</p>
+                        <p id=""msg"">Loading your dashboard, please wait...</p>
+                        <script>
+                        (function () {
+                            var dashboardUrl = ""https://raw.githubusercontent.com/ahmar20/inverter-monitor/refs/heads/master/page.html"";
+                            var cacheKey = ""dashboardHtmlCache"";
+                            var msg = document.getElementById(""msg"");
+
+                            function render(html) {
+                                document.open();
+                                document.write(html);
+                                document.close();
+                            }
+
+                            function load(attempt) {
+                                var controller = new AbortController();
+                                var timeoutId = setTimeout(function () {
+                                    controller.abort();
+                                }, 8000);
+
+                                fetch(dashboardUrl, { signal: controller.signal, cache: ""no-store"" })
+                                    .then(function (res) {
+                                        clearTimeout(timeoutId);
+                                        if (!res.ok) throw new Error(""HTTP "" + res.status);
+                                        return res.text();
+                                    })
+                                    .then(function (html) {
+                                        try { localStorage.setItem(cacheKey, html); } catch (e) {}
+                                        render(html);
+                                    })
+                                    .catch(function (err) {
+                                        clearTimeout(timeoutId);
+
+                                        if (attempt < 2) {
+                                            setTimeout(function () { load(attempt + 1); }, 1500);
+                                            return;
+                                        }
+
+                                        var cached = null;
+                                        try { cached = localStorage.getItem(cacheKey); } catch (e) {}
+
+                                        if (cached) {
+                                            msg.textContent = ""Using last saved dashboard (offline) ..."";
+                                            setTimeout(function () { render(cached); }, 600);
+                                        } else {
+                                            msg.textContent =
+                                                ""Could not load dashboard: "" + err.message +
+                                                "". Check that this device has internet access."";
+                                        }
+                                    });
+                            }
+
+                            load(1);
+                        })();
+                        </script>
                         </body>
                         </html>";
                 SendResponse(e, htmlContent, "text/html", HttpStatusCode.OK);
@@ -117,7 +162,7 @@ namespace inverter_monitor
             string json =
                 "{" +
                 "\"status\":\"ok\"," +
-                "\"uptime\":" + Helpers.ElapsedTime +
+                "\"uptime\":" + Helpers.GetFormattedUptime() +
                 "}";
 
             SendResponse(e, json, "application/json", HttpStatusCode.OK);

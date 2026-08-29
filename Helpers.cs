@@ -290,5 +290,23 @@ namespace inverter_monitor
             }
             return false;
         }
+
+
+        public static string GetFormattedUptime()
+        {
+            var totalSeconds = Math.Floor(ElapsedTime / 1000);
+            var days = Math.Floor(totalSeconds / 86400);
+            var hours = Math.Floor((totalSeconds % 86400) / 3600);
+            var minutes = Math.Floor((totalSeconds % 3600) / 60);
+            var seconds = totalSeconds % 60;
+;
+            if (days > 0)
+                return $"{days} Days {hours} Hrs";
+            if (hours > 0)
+                return $"{hours} Hrs {minutes} Mins";
+            if (minutes > 0)
+                return $"{minutes} Mins {seconds} seconds";
+
+            return $"{seconds} seconds";        }
     }
 }
